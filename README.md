@@ -15,9 +15,7 @@
 ## Descrição
 
 <p align="center">
-<img src="https://pix4free.org/assets/library/2021-01-20/originals/game.jpg" alt="NOME DO JOGO" border="0">
-  Game by <a href="http://www.nyphotographic.com/">Nick Youngson</a> <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a> <a href="http://pix4free.org/">Pix4free</a>
-</p>
+<img src="https://media.discordapp.net/attachments/1087878145765560342/1087879636152762408/1-removebg-preview.png?width=406&height=406" alt="LOGO" border="0">
 
 
 De um a dois parágrafos sobre o que é seu projeto e o que ele faz.
