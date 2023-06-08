@@ -18,11 +18,7 @@
 <img src="https://media.discordapp.net/attachments/1087878145765560342/1087879636152762408/1-removebg-preview.png?width=406&height=406" alt="LOGO" border="0">
 
 
-De um a dois parágrafos sobre o que é seu projeto e o que ele faz.
-<br><br>
-Meu projeto ajuda estudantes FECAP a configurarem seus githubs.
-<br><br>
-May the force be with you!
+O projeto "Zero Waste” é um aplicativo que visa simplificar e agilizar o processo de doação de alimentos para organizações não governamentais (ONGs). O objetivo principal é criar uma ponte eficiente entre pessoas dispostas a doar alimentos e as ONGs que estão em necessidade desses recursos, a fim de combater a fome e ajudar aqueles que mais precisam.
 <br><br>
 
 ## 📋 Licença/License
