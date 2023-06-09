@@ -1,0 +1,65 @@
+<div *ngIf="sidebarButton" class="sidebar" style="display: flex; flex-direction: column;" #sidebar>
+
+    <div style="width: 100%; display: flex; justify-content: flex-end; padding: 24px 24px 0 0; gap: 8px; align-items: center;">
+
+        
+        <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="var(--zw-red)" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z"/>
+            <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
+        </svg>
+        <p style="font-size: 1.2em; color: var(--zw-red); font-weight: 700;">Sair</p>
+    </div>
+    <div (click)="toggleSidebar()" style="flex-grow: 1; width: 100%; display: flex; justify-content: center; align-items: center; color: var(--zw-red); font-weight: 900; font-size: 1.3em; opacity: 50%;">
+        <p>Clique para Fechar</p>
+    </div>
+
+</div>
+
+<header class="header" [style.background]="color ? 'var(--zw-red)' : 'white'" >
+
+   
+    <div class="header-inside">
+
+       
+        <!-- <span *ngIf="logoutButton" class="header-back-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="white" class="bi bi-arrow-bar-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5ZM10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5Z"/>
+              </svg>
+        </span> -->
+
+        <span *ngIf="sidebarButton" (click)="toggleSidebar()"class="header-back-icon">
+            <!-- <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-list" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+              </svg> -->
+              <p style="color: rgba(255, 255, 255, 0.950); font-weight: 900; font-size: 1.2em;">Zero Waste</p>
+        </span>
+
+        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="white" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z"/>
+            <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"/>
+          </svg> -->
+
+
+        <span *ngIf="!logoutButton && !sidebarButton" class="header-back-icon">
+            <!-- <svg  (click)="goBack()" xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="white" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+            </svg> -->
+           
+        </span>
+        <!-- <span class="header-options-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="white" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                </svg>
+                
+        </span> -->
+        <!-- <h1 class="header-title">Main</h1> -->
+    </div>
+</header>
+
+
+<!-- <div class="logout-window">
+
+    <button class="cancel-button">Cancelar</button>
+    <button class="logout-button">Logout</button>
+</div> -->
+

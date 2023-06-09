@@ -1,0 +1,170 @@
+<!-- 
+
+<main class="master" [@slideToSide]>
+    <app-header></app-header>
+    <main class="main">
+
+        <div class="ong-main-info">
+
+        <div class="ong-pic"></div>
+        <h3>My Company</h3>
+        <h4>Children | Love | Help | Better | World</h4>
+        
+        <div class="pair-of-buttons-container">
+            <button class="classic-button p-btn">Like</button>
+            <button class="classic-button s-btn">Chat</button>
+        </div>
+    </div>
+
+    <div>
+        <h2>About</h2>
+        <p>Descricao grande da minha ong para fins de testagem de style elipsis Descricao grande da minha ong para fins de testagem de style elipsis Descricao grande da minha ong para fins de testagem de style elipsis Descricao grande da minha ong para fins de testagem de style elipsis</p>
+    </div>
+
+
+    <div class="requests">
+        <div class="request">
+            <h3>Minha Ordem</h3>
+            <p>Campanha para ajuda de uma escola que sofre com falta de energia eletrica. Descricao grande da minha ong para fins de testagem de style elipsis. Descricao grande da minha ong para fins de testagem de style elipsis</p>
+            <div class="pair-of-buttons-container">
+                <button class="classic-button s-btn">Salvar</button>
+                <button class="classic-button p-btn">Fazer um Agendamento</button>
+            </div>
+        </div>
+        <div class="request">
+            <h3>Minha Ordem2</h3>
+            <p>Campanha para ajuda de uma escola que sofre com falta de energia eletrica. Descricao grande da minha ong para fins de testagem de style elipsis. Descricao grande da minha ong para fins de testagem de style elipsis</p>
+            <div class="pair-of-buttons-container">
+                <button class="classic-button s-btn">Salvar</button>
+                <button class="classic-button p-btn">Fazer um Agendamento</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="bottom-company-info">
+        <span class="bottom-info-container">
+            <p>likes</p>
+            <p>7</p>
+        </span>
+        <span class="bottom-info-container">
+            <p>Requests</p>
+            <p>1</p>
+        </span>
+        <span class="bottom-info-container">
+            <p>Completed</p>
+            <p>0</p>
+        </span>
+    </div>
+
+</main>
+</main> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<main class="master" [@slideToSide]>
+    <app-header [back]="'perfil'"></app-header>
+    <main class="main">
+
+
+ 
+            <a href="pesquisa" class="voltar"><div class="voltar-btn"><img src="../../assets/Voltar.png" alt=""></div></a>
+            <div class="header">
+                <h1>{{ong?.name}}</h1>
+                <p class="guide">Saiba mais sobre a ONG:</p>
+                <p>{{ong?.description}}</p>
+            </div>
+        
+            <div class="local">
+                <p>Para doar basta verificar o endereço abaixo e enviar os alimentos necessários para a ONG.</p>
+                <div>
+                    <h3>Cidade: <span>{{ong?.address_street}}</span></h3>
+                </div>
+                <div>
+                    <h3>Estado: <span>{{ong?.address_state}}</span></h3>
+                </div>
+                <div>
+                    <h3>Número: <span>{{ong?.address_number}}</span></h3>
+                </div>
+                <div>
+                    <h3>Funcionamento:</h3>
+                      
+                        <div class="funcionamento" *ngFor="let day of weekdays">
+                            <span class="dia" *ngIf="ong?.working_time[day] === '00:00-00:00'">
+                                <p class="dia">{{day}}: Fechado</p>
+            
+                            </span>
+                            <span *ngIf="ong?.working_time[day] !== '00:00-00:00'">
+                                <p class="dia">{{day}}: {{ong?.working_time[day]}}</p>
+                            
+
+                            </span>
+                        </div>
+                       
+                    
+                </div>
+            </div>
+
+            <div class="alimentos">
+            <div *ngFor="let order of ong_active_orders">
+
+                <h2>Solicitações em Aberto:</h2>
+                <button class="alimento" (click)="goToOrderPage(order?._id)">
+                    <h1 class="nome-sol">{{order?.name}}</h1>
+                    <p>Alimento:</p>
+                    <div *ngFor="let item of order.items; let i = index;">
+                        <p *ngIf="order?.items[i] !== 0">{{possible_items[i]}}: {{order?.items[i]}}</p>
+                    </div>
+             
+                    <p class="data">Solicitação realizada em: {{order?.created_at}}</p>    
+                    <div style="display: flex; gap: 12px; align-items: center; width: 100%;">
+                        <p>{{((order?.sum_donated / order?.sum_items) * 100).toString().split('.')[0]}}%</p>
+                        <div class="progress-bar-outside">
+                            <div class="progress-bar-inside" [style.width.%]="((order?.sum_donated / order?.sum_items) * 100) + 2">
+                            </div>
+                            
+                        </div>
+                    </div>
+                </button>
+            </div>
+        </div>
+            <br>
+            <br>
+            <br>
+            <br>
+     
+
+
+
+
+
+
+
+</main>
+</main>

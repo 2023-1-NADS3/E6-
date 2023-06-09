@@ -1,0 +1,92 @@
+<main class="master" [@slideAnimation]>
+    <app-header [back]="'perfil'" [color]=true [sidebarButton]="true"></app-header>
+
+<main class="main">
+
+
+    <div style="display: flex; flex-direction: column; gap: 16px; width: 100%;">
+    
+
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+        <h1>Solicitação</h1>
+        <p>Ao solicitar uma Campanha, voce pode acompanhar os agendamentos que os usuários realizam para a mesma clicando nela em seu Perfil.</p>
+    </div>
+
+ 
+
+    <!-- <div style="display: flex; width: 100%; align-items: center; background: white; overflow: hidden; border: 1px solid #b4b4b4; transition: 0.3s ease-in-out; height: 40px;" #nameContainer>
+        <div style="padding: 0 8px 0 8px; display: flex; justify-content: center; background: var(--zw-red); height: 100%; display: flex; align-items: center; justify-content: center;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+            <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
+          </svg>
+        </div>
+        <input  name="name" [(ngModel)]="name" type="text" style="flex-grow: 1; background-color: white;" placeholder="Nome da Campanha" [ngModelOptions]="{standalone: true}" (ngModelChange)="onNameInputChange()" #nameInput="ngModel" >
+
+        <div  *ngIf="valid_name" style="width: 30px; height: 100%; background: white; display: flex; justify-content: center; align-items: center;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="var(--zw-red)" class="bi bi-check" viewBox="0 0 16 16">
+            <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+          </svg>
+        </div>
+      </div> -->
+
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+
+        <div>
+            <input placeholder="Nome da Campanha" type="text" name="" id="" style="width: 100%; height: 40px; border: 1px solid rgb(220,220,220); border-radius: 15px;">
+        </div>
+          
+        <textarea #descriptionInput placeholder="Descreva sua Campanha (min: 85)" [ngModelOptions]="{standalone: true}" [(ngModel)]="description" (ngModelChange)="onDescriptionInputChange()" style=" width: 300px; background-color: white; padding: 8px; border-radius: 25px; outline: none; padding: 8px; border: 1px solid rgb(220,220,220); width: 100%; height: 200px;" name="" id=""></textarea>
+<!-- 
+          <div style="display: flex; width: 100%; height: fit-content; align-items: flex-start; background: white; overflow: hidden; flex-direction: column;">
+            <label for="">Descreva sua Campanha de Doação:</label>
+            <div style="display: flex; justify-content: space-between; width: 100%;">
+                <p style="color: rgb(170,170,170); font-size: .8em; text-align: start; flex-grow: 1;">Minimo de 85 caracteres</p>
+                <p style="color: rgb(170,170,170); text-align: end; width: fit-content;">{{description.length}}/400</p>
+            </div>
+        </div> -->
+    </div>
+
+
+
+    <div  style="display: flex; flex-direction: column; gap: 8px;">
+        <h1>Alimentos</h1>
+        <p>Selecione os itens que os usuarios poderão doar para sua Campanha. Não há um limite de items, porém cada item possuí um valor máximo que é de 150kg</p>
+    </div>
+
+    <div>
+    <div style="display: flex; gap: 16px; flex-direction: column;">
+        <div *ngFor="let item of possible_items; let i = index">
+
+            <div style="width: 100%; display: flex; justify-content: space-between;">
+                
+                <p>{{possible_items[i]}}</p>
+                
+                
+                
+                <input type="number" name="" id="" style="width: 100px;" [(ngModel)]="items[i]">
+                
+            </div>
+        </div>
+        
+    </div>
+    </div>
+
+
+
+   
+    <div style="display: flex; justify-content: center; gap: 8px; padding-bottom: 100px; margin-top: 16px;">
+        <button (click)="goTo('/perfil')" class="find-ongs-button" style="background: white; color: var(--zw-red); width: fit-content;">
+            Voltar
+        </button>
+        
+        <button (click)="createOrder()" class="find-ongs-button" style="flex-grow: 1;" >
+            Criar Solicitação
+        </button>
+    </div>
+        
+    </div>
+
+
+</main>
+
+</main>

@@ -1,0 +1,32 @@
+th{
+    background-color: var(--zw-red);
+    padding: 12px 0 12px 0;
+    color: white;
+}
+
+td{
+    text-align: center;
+    border: 1px solid rgb(182, 182, 182);
+    padding: 8px 0 8px 0;
+}
+
+tr{
+    margin: 0;
+    padding: 0;
+}
+
+table{
+    border-collapse: collapse;
+    gap: 0;
+    width: 100%;
+}
+
+.truncate {
+    max-width: 60px; /* Adjust the width as per your requirement */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: start!important;
+    padding: 8px;
+  }
+

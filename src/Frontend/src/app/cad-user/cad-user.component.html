@@ -1,0 +1,280 @@
+
+
+<main class="master" [@slideAnimation]>
+    <main class="main" style="position: relative;">
+
+     
+  
+
+     
+
+            <!-- <img src="../../assets/Group_218-removebg-preview.png" style="position: absolute; top: -45px; left: -8px; width: 400px;" alt=""> -->
+          
+          
+            <form style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 24px; padding-top: 75px;z-index: 1; position: absolute; top: 0; right: 0; left: 0; margin: auto;">
+        
+                <div style="width: 80px; height: 80px; overflow: hidden; background-color: var(--zw-red); border-radius: 50%; position: relative;">
+              
+                    <!-- <svg style="position: absolute; inset: 0 0 0 0; margin: auto;" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="white" class="bi bi-person-fill" viewBox="0 0 16 16">
+                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+                      </svg> -->
+  
+             
+
+                    <svg style="position: absolute; inset: 0 0 0 0; margin: auto;" 
+                    xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="white" class="bi bi-person-fill" viewBox="0 0 16 16" >
+                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+                      </svg>
+          
+              </div>
+          
+          
+          
+           
+          
+              <div style="display: flex; flex-direction: column; align-items: center; gap: 16px; z-index: 1;">
+
+
+
+
+   
+              
+       
+                <div style="height: 40px; display: flex; width: 300px; align-items: center; background: white; overflow: hidden; border: 1px solid #b4b4b4; transition: 0.3s ease-in-out; box-sizing: content-box;" #nameContainer>
+                  <div style="padding: 0 8px 0 8px; display: flex; justify-content: center; background: var(--zw-red); height: 100%; display: flex; align-items: center; justify-content: center;">
+        
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-person-fill" viewBox="0 0 16 16">
+                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+                      </svg>
+                  </div>
+                  <input  name="name" [(ngModel)]="name" type="text" style="flex-grow: 1; background-color: white; border: none;" placeholder="Nome" [ngModelOptions]="{standalone: true}" (ngModelChange)="onNameInputChange()" #nameInput="ngModel" >
+
+                  <div  *ngIf="valid_name" style="width: 30px; height: 100%; background: white; display: flex; justify-content: center; align-items: center; transition: 0.2s ease-in-out;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="var(--zw-red)" class="bi bi-check" viewBox="0 0 16 16">
+                      <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                    </svg>
+                  </div>
+                </div>
+          
+          
+                <div style="height: 40px; display: flex; width: 300px; align-items: center; background: white; overflow: hidden; border: 1px solid #b4b4b4; transition: 0.3s ease-in-out; box-sizing: content-box;" #emailContainer>
+                  <div style="padding: 0 8px 0 8px; display: flex; justify-content: center; background: var(--zw-red); height: 100%; display: flex; align-items: center; justify-content: center;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                      <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
+                    </svg>
+                  </div>
+                  <input  name="email" [(ngModel)]="email" type="email" style="flex-grow: 1; background-color: white;" placeholder="Email" [ngModelOptions]="{standalone: true}" (ngModelChange)="onEmailInputChange()" #emailInput="ngModel" >
+
+                  <div  *ngIf="valid_email" style="width: 30px; height: 100%; background: white; display: flex; justify-content: center; align-items: center; transition: 0.2s ease-in-out;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="var(--zw-red)" class="bi bi-check" viewBox="0 0 16 16">
+                      <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                    </svg>
+                  </div>
+                </div>
+
+               
+             
+
+             
+
+
+             
+
+
+               
+
+                
+                
+                
+                
+                <!-- SENHA -->
+
+             
+
+         
+           
+                <div style="height: 40px; display: flex; width: 300px; align-items: center; background: white; overflow: hidden; border: 1px solid #b4b4b4; transition: 0.3s ease-in-out; box-sizing: content-box;" #emailContainer>
+                  <div style="padding: 0 8px 0 8px; display: flex; justify-content: center; background: var(--zw-red); height: 100%; display: flex; align-items: center; justify-content: center;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-lock-fill" viewBox="0 0 16 16">
+                      <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
+                    </svg>
+                  </div>
+                  <input  name="senha" [(ngModel)]="password" type="password" style="flex-grow: 1; background-color: white;" placeholder="Senha" [ngModelOptions]="{standalone: true}" (ngModelChange)="onPasswordInputChange()" #passwordInput="ngModel" >
+
+                  <div  *ngIf="valid_password" style="width: 30px; height: 100%; background: white; display: flex; justify-content: center; align-items: center; transition: 0.2s ease-in-out;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="var(--zw-red)" class="bi bi-check" viewBox="0 0 16 16">
+                      <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                    </svg>
+                  </div>
+                </div>
+                
+                <!-- CONFIRM SENHA -->
+                <div style="height: 40px; display: flex; width: 300px; align-items: center; background: white; overflow: hidden; border: 1px solid #b4b4b4; transition: 0.3s ease-in-out; box-sizing: content-box;" #confirmPasswordContainer>
+                  <div style="padding: 0 8px 0 8px; display: flex; justify-content: center; background: var(--zw-red); height: 100%; display: flex; align-items: center; justify-content: center;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-arrow-counterclockwise" viewBox="0 0 16 16">
+                      <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z"/>
+                      <path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466z"/>
+                    </svg>
+                  </div>
+                  <input  name="confirmar_senha" [(ngModel)]="confirmPassword" type="password" style="flex-grow: 1; background-color: white;" placeholder="Confirmar Senha" [ngModelOptions]="{standalone: true}" (ngModelChange)="onConfirmPasswordInputChange()" #confirmPasswordInput="ngModel" >
+
+                  <div  *ngIf="valid_confirm_password" style="width: 30px; height: 100%; background: white; display: flex; justify-content: center; align-items: center; transition: 0.2s ease-in-out;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="var(--zw-red)" class="bi bi-check" viewBox="0 0 16 16">
+                      <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                    </svg>
+                  </div>
+                </div>
+           
+            
+
+
+
+               
+
+                <!-- CPNJ -->
+                <!-- <div style="height: 40px; display: flex; width: 300px; align-items: center; background: white; overflow: hidden; border: 1px solid #b4b4b4; transition: 0.3s ease-in-out; box-sizing: content-box;" #addressContainer>
+                  <div style="padding: 0 8px 0 8px; display: flex; justify-content: center; background: var(--zw-red); height: 100%; display: flex; align-items: center; justify-content: center;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                      <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
+                    </svg>
+                  </div>
+                  <input  name="endereco" [(ngModel)]="address" type="text" style="flex-grow: 1; background-color: white;" placeholder="Endereço" [ngModelOptions]="{standalone: true}" (ngModelChange)="onAddressInputChange()" #addressInput="ngModel" >
+  
+                  <div  *ngIf="valid_address" style="width: 30px; height: 100%; background: white; display: flex; justify-content: center; align-items: center; transition: 0.2s ease-in-out;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="var(--zw-red)" class="bi bi-check" viewBox="0 0 16 16">
+                      <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                    </svg>
+                  </div>
+                </div> -->
+
+               
+
+            
+          
+           
+               
+                
+             
+
+          
+
+              <!--  ENDEREÇO -->
+
+             
+
+       
+                
+              <!-- <div style="height: 40px; display: flex; width: 300px; align-items: center; background: white; overflow: hidden; border: 1px solid #b4b4b4; transition: 0.3s ease-in-out; box-sizing: content-box;" #addressContainer>
+                <div style="padding: 0 8px 0 8px; display: flex; justify-content: center; background: var(--zw-red); height: 100%; display: flex; align-items: center; justify-content: center;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-globe-americas" viewBox="0 0 16 16">
+                    <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0ZM2.04 4.326c.325 1.329 2.532 2.54 3.717 3.19.48.263.793.434.743.484-.08.08-.162.158-.242.234-.416.396-.787.749-.758 1.266.035.634.618.824 1.214 1.017.577.188 1.168.38 1.286.983.082.417-.075.988-.22 1.52-.215.782-.406 1.48.22 1.48 1.5-.5 3.798-3.186 4-5 .138-1.243-2-2-3.5-2.5-.478-.16-.755.081-.99.284-.172.15-.322.279-.51.216-.445-.148-2.5-2-1.5-2.5.78-.39.952-.171 1.227.182.078.099.163.208.273.318.609.304.662-.132.723-.633.039-.322.081-.671.277-.867.434-.434 1.265-.791 2.028-1.12.712-.306 1.365-.587 1.579-.88A7 7 0 1 1 2.04 4.327Z"/>
+                  </svg>
+                </div>
+                <input  name="endereco" [(ngModel)]="address" type="text" style="flex-grow: 1; background-color: white;" placeholder="Endereço" [ngModelOptions]="{standalone: true}" (ngModelChange)="onAddressInputChange()" #addressInput="ngModel" >
+
+                <div  *ngIf="valid_address" style="width: 30px; height: 100%; background: white; display: flex; justify-content: center; align-items: center; transition: 0.2s ease-in-out;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="var(--zw-red)" class="bi bi-check" viewBox="0 0 16 16">
+                    <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                  </svg>
+                </div>
+              </div> -->
+               
+          
+<!-- 
+                <div style="display: flex; justify-content: space-between; width: 100%;">
+
+                    
+                     
+                    <div style="height: 40px; display: flex; width: 145px; align-items: center; background: white; overflow: hidden; border: 1px solid #b4b4b4; transition: 0.3s ease-in-out; box-sizing: content-box;" #addressContainer>
+                      <div style="padding: 0 8px 0 8px; display: flex; justify-content: center; background: var(--zw-red); height: 100%; display: flex; align-items: center; justify-content: center;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                          <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                        </svg>
+                      </div>
+                     
+                      <select  [(ngModel)]="address_state" name= "UF" style="box-shadow: 2px 4px 6px -3px rgba(0, 0, 0, 0.214); width: 145px;">
+                        <option value="">Estado</option>
+                        <option value="AC">AC</option>
+                        <option value="DF">DF</option>
+                        <option value="ES">ES</option>
+                        <option value="GO">GO</option>
+                        <option value="SC">SC</option>
+                        <option value="SP">SP</option>
+                    </select>
+                     
+                    </div>
+
+                 
+                    <div style="height: 40px; display: flex; width: 145px; align-items: center; background: white; overflow: hidden; border: 1px solid #b4b4b4; transition: 0.3s ease-in-out; box-sizing: content-box;" #addressNumberContainer>
+                      <div style="padding: 0 8px 0 8px; display: flex; justify-content: center; background: var(--zw-red); height: 100%; display: flex; align-items: center; justify-content: center;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                          <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                        </svg>
+                      </div>
+                      <input  name="numberoEndereco" [(ngModel)]="addressNumber" type="number" style="flex-grow: 1; background-color: white;" placeholder="Numero" [ngModelOptions]="{standalone: true}" (ngModelChange)="onAddressNumberInputChange()" #addressNumberInput="ngModel" >
+      
+                      <div  *ngIf="valid_address_number" style="width: 30px; height: 100%; background: white; display: flex; justify-content: center; align-items: center; transition: 0.2s ease-in-out;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="var(--zw-red)" class="bi bi-check" viewBox="0 0 16 16">
+                          <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                        </svg>
+                      </div>
+                    </div>
+                    
+                </div> -->
+          
+
+                          
+                <button #registerButton (click)="register()" style="width: 100%; border: none; color: white; background: var(--zw-red); font-size: 1.3em; padding: 6px 46px 6px 46px; font-weight: 600; border-radius: 0px; box-shadow: none;" >
+
+                  Criar Conta
+                </button>
+                
+                <div style="height: 50px; display: flex; justify-content: center; align-items: center;">
+                    <div #spinner class="spinner" *ngIf="loading"></div>
+                </div>
+                <!-- <input type="text" style="width: 300px; border-radius: 50px; "> -->
+                <!-- <div style="display: flex; align-items: center;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="red" class="bi bi-exclamation-triangle" viewBox="0 0 16 16">
+                    <path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/>
+                    <path d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995z"/>
+                  </svg>
+                    <p style=" font-size: .9em; word-spacing: 4px; text-align: center; width: 100%; color: red; font-weight: 500;">Usuário não existe.</p>
+                    </div> -->
+
+
+             
+                <!-- <div style="display: flex; justify-content: space-between; width: 100%;">
+    
+                    <button (click)="login()" style="width: fit-content; border: none; color: var(--zw-red); background: white; font-size: 1.2em; padding: 6px 32px 6px 32px; border-radius: 8px; box-shadow: 2px 7px 4px -3px rgba(0, 0, 0, 0.214); font-weight: 700;">Voltar</button>
+                    <button (click)="login()" style="width: fit-content; border: none; color: white; background: var(--zw-red); font-size: 1.2em; padding: 6px 32px 6px 32px; border-radius: 8px; box-shadow: 2px 7px 4px -3px rgba(0, 0, 0, 0.214); font-weight: 700;">Próximo</button>
+                </div> -->
+                    
+                  <!-- <div style="font-size: .8em; display: flex; flex-direction: column; gap: 8px; color: rgb(83, 83, 83);">
+                    <p>Esqueceu sua senha? <a (click)="state = 'register'" style="margin-left: 4px;color: var(--zw-red);" id="link-tag">Recuperar Senha</a></p>
+                      <p class="bottom-text">Não tem uma conta? <a (click)="state = 'register'" style="margin-left: 4px;  color: var(--zw-red);" id="link-tag">Registrar</a></p>
+            
+                  </div> -->
+          
+              <!-- <p>ou</p>
+          
+              <a (click)="state = 'register'" href="#"  id="google-login-button" class="google-signin-button">
+          
+                <span class="button-text">
+                  Sign in with Google</span>
+              </a> -->
+            </div>
+
+            <div style="font-size: .8em; display: flex; flex-direction: column; gap: 8px; color: rgb(83, 83, 83);">
+                <p class="bottom-text">Já tem uma conta? <span (click)="goTo('login')" style="margin-left: 4px;  color: var(--zw-red);" id="link-tag">Entrar</span></p>
+                <p>Esqueceu sua senha? <a style="color: var(--zw-red);" id="link-tag">Recuperar Senha</a></p>
+        
+              </div>
+            <!-- <img src="../../assets/Vector 132.png" style="position: absolute; bottom: 0; left: 0; width: 350px; z-index: 0; transform: rotateX(-180deg) rotateY(-180deg);" alt=""> -->
+          </form>
+          
+            <!-- <img src="../../assets/Vector 132.png" style="position: absolute; top: 0; right: 0; width: 350px; z-index: 0;" alt=""> -->
+     
+
+
+    </main>
+</main>

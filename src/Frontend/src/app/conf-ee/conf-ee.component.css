@@ -1,0 +1,53 @@
+* {
+    
+    margin: 0;
+    padding: 0;
+    
+    font-family: 'Manrope', sans-serif;
+    
+}
+
+.input, .select{
+
+    background: #FFFFFF;
+    border: 1px solid #C6C6C6;
+    border-radius: 10px;
+    height: 41px;
+    width: 325px;
+    border-radius: 10px;
+    border-color: #C6C6C6;
+    
+
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50%;
+
+}
+
+.titulo {
+    text-align: center;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 34px;
+    
+    width: 50%;
+
+}
+
+.link {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+
+    color: #D99D2A;
+}
+
+.img{
+    width: 96px;
+    height: 96px;
+    background: url(src\assets\Ok.png)
+}
+

@@ -1,0 +1,55 @@
+
+<main class="master" [@slideAnimation]>
+    <app-header [back]="'perfil'" [color]=true [sidebarButton]="true"></app-header>
+    <main class="main">
+        
+        <div *ngIf="user?.type === 'ong'" class="orders-container" >
+
+            <div *ngIf="my_orders?.length === 0" style="margin: auto; display: flex; justify-content: center; flex-direction: column; width: 100%; align-items: center; background: white; padding: 42px 16px 42px 16px; gap: 12px; color:rgb(170,170,170);">
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="rgb(150,150,150)" class="bi bi-clipboard" viewBox="0 0 16 16">
+                    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+                </svg>
+                <p style="font-weight: 600; width: fit-content; text-align: center; width: 250px;">Voce não possui nenhuma Solicitção...</p>
+            </div>
+                <!-- <img src="../../assets/no_requests-removebg-preview (1).png" style="margin: auto; width: 225px;"alt=""> -->
+    
+                <div *ngFor="let order of my_orders">
+                    <div class="request">
+                        <div class="request-info">
+                            <h4 class="company-name elip fl" style="text-transform: capitalize;">{{order?.name}}</h4>
+                            <p class="company-description elip sl s-text" style="color: rgb(65,65,65);">{{order?.description}}</p>
+                            
+                            <!-- <p class="elip fl" style="margin-top: 6px;">Itens: 
+                             <div *ngFor="item of order?.items; let j = index">
+                                    <span *ngIf="order?.items[j] > 0">
+                                        {{possible_items[j]}}
+                                    </span>
+                                </div>  -->
+                        </div>
+                        <div style="display: flex; gap: 12px; align-items: center; width: 100%;">
+                            <p>{{((order?.sum_donated / order?.sum_items) * 100).toString().split('.')[0]}}%</p>
+                            <div class="progress-bar-outside">
+                                <div class="progress-bar-inside" [style.width.%]="((order?.sum_donated / order?.sum_items) * 100) + 2">
+                                </div>
+                                
+                            </div>
+                        </div>
+    
+                        <div style="display: flex; justify-content: space-between; width: 100%; gap: 16px;">
+                            <button  (click)="goToOrderPage(order?._id)" style="width: 40%; border: none; color: var(--zw-red); background: white; font-size: 1.3em; padding: 6px 16px 6px 16px; font-weight: 600; border-radius: 0px; box-shadow: none;" >
+                                Ver
+                            </button>
+                            <button  (click)="goToAppointmentsFromOrderPage(order?._id)" style="width: 100%; border: none; color: white; background: var(--zw-red); font-size: 1.3em; padding: 6px 16px 6px 16px; font-weight: 600; border-radius: 0px; box-shadow: none;" >
+                                Agendamentos
+                            </button>
+                        </div>
+                  
+                    </div>
+    
+                </div>
+        </div>
+
+    </main>
+</main>
+

@@ -1,0 +1,183 @@
+/* .box{
+    padding: 20px;
+}
+h2{
+    color: #9E9E9E;
+}
+h3{
+    color: #D99D2A;
+}
+
+.holder{
+    display: contents;
+    width: 100%;
+}
+.holder .info{
+    display: flex;
+    justify-content: space-between;
+}
+.dia{
+    margin-right: 20px;
+}
+.dia .select{
+    width: 100%;
+}
+.hora .input{
+    width: fit-content;
+    max-width: 100px;
+}
+.holder .dia{
+    width: 100%;
+}
+.holder .hora{
+    width: fit-content;
+    
+}
+.info{
+    padding-bottom: 20px;
+    border-bottom: 2px dashed #C6C6C6;
+}
+.alimentoInfo{
+    display: flex;
+    justify-content: space-between;
+}
+.alimento {
+    width: 100%;
+    margin-right: 20px;
+}
+.alimento .select{
+    width: 100%;
+}
+.quantidade .input{
+    max-width: 100px;
+}
+.envia-btn img{
+    margin-right: 10px;  
+}
+.confirma-btn{
+    max-width: 300px;
+    width: 100%;
+}
+@media screen and (max-width: 430px){
+    .hora .input{
+        max-width: 100%;
+    }
+    .quantidade{
+        margin-right: 20px;
+    }
+    .quantidade .input{
+       max-width: 430px;
+       width: 100%;
+    }   
+    .alimentoInfo{
+        display: contents;
+    }
+} */
+
+
+.days-of-week{
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    justify-content: flex-start;
+    overflow-x: scroll;
+}
+
+.week-day{
+    height: 120px;
+    min-width: 70px;
+    background-color: var(--my-sec);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+.wd-activated{
+    background-color: var(--my-primary);
+
+}
+
+.times{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: blue;
+    gap: 8px;
+}
+.time{
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    align-items: center;
+    padding: 8px;
+}
+.time-pic{
+    width: fit-content;
+    height: fit-content;
+}
+.time-info{}
+
+.progress-bar{
+    width: 100%;
+    height: 4px;
+    background-color: red;
+}
+
+.request{
+    display: flex;
+    justify-content: space-between;
+}
+
+.donations{
+    height: 200px;
+    width: 100%;
+    margin-bottom: 124px;
+    background-color: yellow;
+}
+.donation{
+    display: flex;
+    flex-direction: column;
+    background-color: aqua;
+    padding: 8px 0 8px 0;
+    justify-content: space-between;
+}
+
+.donation-pair-of-button-and-input{
+    display: flex;
+    justify-content: space-between;
+}
+
+.quantity-input{
+    background-color: gray;
+    width: 80px;
+}
+
+
+.marcar-agendamento-btn{
+    max-width: 550px;
+    width: 90%;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.open{
+    background-color: var(--zw-yellow);
+}
+
+.closed{
+    background-color: rgb(220,220,220);
+    color: gray;
+}
+
+th,td{
+    width: 33.3%;
+    text-align: center;
+}
+
+.activated{
+    background-color: blueviolet;
+}
+.disabled{
+    background-color: brown;
+}

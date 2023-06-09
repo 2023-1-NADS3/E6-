@@ -1,0 +1,579 @@
+
+
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+a{
+    text-decoration: none;
+}
+
+button{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.voltar{
+    text-decoration: none;
+    margin-bottom: 20px;
+    width: 100%;
+}
+.voltar-btn{
+    width: auto;
+    padding-left: 10px;
+    padding-top: 10px;
+    font-weight: bolder;
+    
+}
+
+.input, .select{
+    padding: 7px;
+    border: #C6C6C6 solid 2px;
+    border-radius: 7px;
+    font-size: 20px;
+    /* color: #9E9E9E; */
+}
+.input:hover, .select:hover{
+    border: #D99D2A solid 2px;
+}
+.input:focus, .select:focus{
+    outline: #D99D2A solid !important;
+}
+
+.btn-holder{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.confirma-btn{
+    cursor: pointer;
+    font-size: 20px;
+    padding: 10px 50px;
+    border-radius: 10px;
+    border: none;
+    background-color: #8FB021;
+    color: white;
+    transition: 0.3s;
+}
+.confirma-btn:hover{
+    font-size: 30px;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.envia-btn{
+    background-color:#D99D2A;
+    border: none;
+    color: white;
+    font-size: 20px;
+    display: inline-flex;
+    align-items: center; 
+    padding: 10px;
+    border-radius: 7px;
+    filter: drop-shadow(0px 5px 3px #00000049);
+    transition: 0.3s;
+}
+.envia-btn:hover{
+    opacity: 0.7;
+    font-size: 25px;
+    transition: 0.3s;
+}
+
+
+
+.voltar-btn{
+    background-color: #CA262C;
+}
+.voltar-btn img{
+    filter:invert(100%);
+}
+.header{
+    background-color: #CA262C;
+    width: auto;
+    position: relative;
+    top: -25px;
+    border-radius: 0 0px 20px 20px;
+    padding: 0 0 10px 20px;
+    filter: drop-shadow(0px 5px 3px #00000049);
+}
+.header h1,.header p{
+    color: white;
+}
+.header .guide{
+    color: #CBCBCB;
+}
+.local{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.local p{
+    color: #D99D2A;
+}
+.local div{
+    border-bottom: #C6C6C6 dashed 2px;
+}
+.local div h3{
+    color: #CA262C;
+}
+.local div h3 span{
+    color:black;
+}
+.local div .funcionamento{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: none;
+}
+.local div .funcionamento span{
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+}
+.alimentos{
+    padding: 0px 20px;
+}
+.alimentos h2{
+    text-align: center;
+    color: #D99D2A;
+}
+.alimento{
+    border: none;
+    width: 100%;
+    text-align: left;
+    background-color: hsl(0, 0%, 88%);
+    padding: 5px 10px;
+    border-radius: 20px;
+    filter: drop-shadow(0px 5px 3px #00000049);
+    transition: all 0.3s;
+}
+.alimento:hover{
+    background-color: hsl(0, 0%, 71%);
+    transition: all 0.3s;
+}
+.alimento:hover .data{
+    color: white;
+    transition: all 0.3s;
+}
+.alimento h1{
+    text-align: center;
+}
+.alimento h3{
+    font-size: normal;
+}
+.alimento p{
+    font-size: 18px;
+    font-weight: normal;
+}
+.alimento p span{
+    font-weight: bold;
+    color: #CA262C;
+}
+.alimento .data{
+    font-size: 17px;
+    color: rgb(122, 122, 122);
+    transition: all 0.3s;
+}
+
+.progress-bar{
+    background-color: #a5a5a5;
+    border-radius: 50px;
+    margin-bottom: 5px;
+    text-align: right;
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.progress-bar p{
+    position: absolute;
+    right: 20px;
+    color: white;
+}
+.progress-bar .progress{
+    content: ' ';
+    background-color: #CA262C;
+    width: 100%;
+    border-radius: 50px;
+    height: 20px;
+}
+
+/* FAV NOVO */
+
+.fav-container{
+    display: flex;
+    justify-content: end;
+    position: relative;
+    bottom: 45px;
+    right: 45px;
+}
+.fav-container button{
+    background-color: white;
+    border: solid 2px #CA262C;
+    border-radius: 100px;
+    padding: 0px 0px 0px 0px;
+    width: 50px;
+    height: 50px;
+    transition: 0.3s;
+}
+.fav-container button img{
+    width: 40px;
+    position: relative;
+    top: 4px;
+    transition: 0.3s;
+}
+.fav-container button:hover{
+    background-color: #CA262C;
+    border: solid 2px white;
+    transition: 0.3s;
+}
+.fav-container button:hover img{
+    filter: brightness(0) invert(1);
+    transition: 0.3s;   
+}
+@media screen and (max-width:360px){
+    .fav-container{
+        justify-content: center;
+        position: initial;
+        width: 100%;
+    }
+    .fav-container button{
+        background-color: white;
+        border: solid 2px #CA262C;
+        border-radius: 100px;
+        padding: 0px 0px 0px 0px;
+        margin-left: 0;
+        max-width: 80%;
+        width: 100%;
+        transition: 0.3s;
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .bottom-company-info{
+    display: flex;
+    justify-content: space-evenly;
+    height: fit-content;
+}
+
+
+.ong-main-info{
+    text-align: center;
+
+}
+.ong-pic{
+    margin: auto;
+    width: 75px;
+    background-color: gray;
+    border-radius: 50%;
+    height: 75px;
+}
+.pair-of-buttons-container{
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.bottom-info-container{
+    text-align: center;
+}
+
+
+.requests{
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex-grow: 1;
+    background-color: gray;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Lucas css  */
+/* .voltar-btn{
+    background-color: #CA262C;
+}
+.voltar-btn img{
+    filter:invert(100%);
+}
+.header{
+    background-color: #CA262C;
+    width: auto;
+    position: relative;
+    top: -25px;
+    border-radius: 0 0px 20px 20px;
+    padding: 0 0 10px 20px;
+    filter: drop-shadow(0px 5px 3px #00000049);
+}
+.header h1,.header p{
+    color: white;
+}
+.header .guide{
+    color: #CBCBCB;
+}
+.local{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.local p{
+    color: #D99D2A;
+}
+.local div{
+    border-bottom: #C6C6C6 dashed 2px;
+}
+.local div h3{
+    color: #CA262C;
+}
+.local div h3 span{
+    color:black;
+}
+.local div .funcionamento{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: none;
+}
+.local div .funcionamento span{
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+}
+.alimentos{
+    padding: 0px 20px;
+}
+.alimentos h2{
+    text-align: center;
+    color: #D99D2A;
+}
+.alimento{
+    border: none;
+    width: 100%;
+    text-align: left;
+    background-color: hsl(0, 0%, 88%);
+    padding: 5px 10px;
+    border-radius: 20px;
+    filter: drop-shadow(0px 5px 3px #00000049);
+    transition: all 0.3s;
+}
+.alimento:hover{
+    background-color: hsl(0, 0%, 71%);
+    transition: all 0.3s;
+}
+.alimento:hover .data{
+    color: white;
+    transition: all 0.3s;
+}
+.alimento h1{
+    text-align: center;
+}
+.alimento h3{
+    font-size: normal;
+}
+.alimento p{
+    font-size: 18px;
+    font-weight: normal;
+}
+.alimento p span{
+    font-weight: bold;
+    color: #CA262C;
+}
+.alimento .data{
+    font-size: 17px;
+    color: rgb(122, 122, 122);
+    transition: all 0.3s;
+}
+
+.progress-bar{
+    background-color: #a5a5a5;
+    border-radius: 50px;
+    margin-bottom: 5px;
+    text-align: right;
+    height: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.progress-bar p{
+    position: absolute;
+    right: 20px;
+    color: white;
+}
+.progress-bar .progress{
+    content: ' ';
+    background-color: #CA262C;
+    width: 100%;
+    border-radius: 50px;
+    height: 20px;
+}
+
+
+
+.fav-container{
+    display: flex;
+    justify-content: end;
+    position: relative;
+    bottom: 45px;
+    right: 45px;
+}
+.fav-container button{
+    background-color: white;
+    border: solid 2px #CA262C;
+    border-radius: 100px;
+    padding: 0px 0px 0px 0px;
+    width: 50px;
+    height: 50px;
+    transition: 0.3s;
+}
+.fav-container button img{
+    width: 40px;
+    position: relative;
+    top: 4px;
+    transition: 0.3s;
+}
+.fav-container button:hover{
+    background-color: #CA262C;
+    border: solid 2px white;
+    transition: 0.3s;
+}
+.fav-container button:hover img{
+    filter: brightness(0) invert(1);
+    transition: 0.3s;   
+}
+@media screen and (max-width:360px){
+    .fav-container{
+        justify-content: center;
+        position: initial;
+        width: 100%;
+    }
+    .fav-container button{
+        background-color: white;
+        border: solid 2px #CA262C;
+        border-radius: 100px;
+        padding: 0px 0px 0px 0px;
+        margin-left: 0;
+        max-width: 80%;
+        width: 100%;
+        transition: 0.3s;
+    }
+    
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+a{
+    text-decoration: none;
+}
+.box{
+    width: 100%;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+button{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.voltar{
+    text-decoration: none;
+    margin-bottom: 20px;
+    width: 100%;
+}
+.voltar-btn{
+    width: auto;
+    padding-left: 10px;
+    padding-top: 10px;
+    font-weight: bolder;
+    
+}
+
+.input, .select{
+    padding: 7px;
+    border: #C6C6C6 solid 2px;
+    border-radius: 7px;
+    font-size: 20px;
+}
+.input:hover, .select:hover{
+    border: #D99D2A solid 2px;
+}
+.input:focus, .select:focus{
+    outline: #D99D2A solid !important;
+}
+
+.btn-holder{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.confirma-btn{
+    cursor: pointer;
+    font-size: 20px;
+    padding: 10px 50px;
+    border-radius: 10px;
+    border: none;
+    background-color: #8FB021;
+    color: white;
+    transition: 0.3s;
+}
+.confirma-btn:hover{
+    font-size: 30px;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.envia-btn{
+    background-color:#D99D2A;
+    border: none;
+    color: white;
+    font-size: 20px;
+    display: inline-flex;
+    align-items: center; 
+    padding: 10px;
+    border-radius: 7px;
+    filter: drop-shadow(0px 5px 3px #00000049);
+    transition: 0.3s;
+}
+.envia-btn:hover{
+    opacity: 0.7;
+    font-size: 25px;
+    transition: 0.3s;
+} */
+

@@ -1,0 +1,290 @@
+<!-- 
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<body>
+    <div class="container">
+    <h1 class="titulo">Oi, bem-vindo de volta!</h1>
+    </div>
+
+    <div class="form">  
+ 
+          <div class="form-group">
+            <label  for="E-mail">E-mail</label>
+            <input [(ngModel)]="login_email" class="input" type="text" placeholder="example@gmail.com">
+        </div> 
+        <div class="form-group">
+            <label for="password">Senha</label>
+            <input [(ngModel)]="login_password" class="input" type="password" placeholder="Insira sua senha">
+            <div class="passw_forgot">
+                <p> Esqueceu sua senha?</p>
+            </div>
+        </div> 
+        <button class="form-button"type="submit" (click)="login()">Enviar</button>
+   
+        <div class="footer-cadastro">
+            <p class="footer-cadastro-one">Ainda não tem uma conta?</p>
+            <p class="footer-cadastro-two">Cadastre-se</p>
+        </div>
+        
+
+    </div>
+
+ -->
+
+
+
+
+ <!-- <div [@slideAnimation] class="container-login">
+
+
+  <div class="bottom-triangle"></div>
+
+      <div class="round-back-button-container">
+
+        <i class="fa-solid fa-chevron-left" id="back-arrow"></i>
+      </div>
+
+
+  <h1 class="title">Login</h1>
+
+  <div class="label-input-container">
+    <label for="">Email</label>
+    <input type="text" class="login-input">
+  </div>
+
+  <div class="label-input-container" style="margin-top: 20px;">
+    <label for="">Password</label>
+    <input type="text" class="login-input">
+  </div>
+
+  <div class="login-btn-container">
+    <button mat-flat-button color="primary" class="login-btn">Login</button>
+  </div>
+
+</div> -->
+
+<main class="master" [@slideAnimation]>
+    <main class="main">
+        
+    
+
+        <div  #opacitycontainer *ngIf="state === 'login'" [@slideToSide] style="background-color: white; width: 100vw; height: 100vh; display: flex; flex-direction: column; justify-content: start; gap: 8px; align-items: center; position: relative; padding-top: 120px; transition: 0.15s ease-in-out;">
+
+            
+            <img src="../../assets/Group_218-removebg-preview.png" style="position: absolute; top: -45px; left: -8px; width: 375px;" alt="">
+          
+          
+            <form style="position: absolute; inset: 0 0 35px 0; margin: auto; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 24px;">
+        
+          
+            <div style="width: 80px; height: 80px; overflow: hidden; background-color: var(--zw-red); border-radius: 50%; position: relative;">
+              
+                  <!-- <svg style="position: absolute; inset: 0 0 0 0; margin: auto;" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="white" class="bi bi-person-fill" viewBox="0 0 16 16">
+                      <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+                    </svg> -->
+
+                         <svg style="position: absolute; inset: 0 0 0 0; margin: auto; transform: rotate(-45deg);" xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="white" class="bi bi-key" viewBox="0 0 16 16">
+                    <path d="M0 8a4 4 0 0 1 7.465-2H14a.5.5 0 0 1 .354.146l1.5 1.5a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0L13 9.207l-.646.647a.5.5 0 0 1-.708 0L11 9.207l-.646.647a.5.5 0 0 1-.708 0L9 9.207l-.646.647A.5.5 0 0 1 8 10h-.535A4 4 0 0 1 0 8zm4-3a3 3 0 1 0 2.712 4.285A.5.5 0 0 1 7.163 9h.63l.853-.854a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.793-.793-1-1h-6.63a.5.5 0 0 1-.451-.285A3 3 0 0 0 4 5z"/>
+                    <path d="M4 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                  </svg>
+        
+            </div>
+          
+          
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 32px; z-index: 1;">
+          
+              <div style="display: flex; flex-direction: column; align-items: center; gap: 16px;">
+          
+                <div style="display: flex; width: 300px; align-items: center; background: white; overflow: hidden; border: 1px solid #b4b4b4; transition: 0.3s ease-in-out;" #emailContainer>
+                  <div style="padding: 0 8px 0 8px; display: flex; justify-content: center; background: var(--zw-red); height: 100%; display: flex; align-items: center; justify-content: center;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                      <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
+                    </svg>
+                  </div>
+                  <input  name="email" [(ngModel)]="email" type="email" style="flex-grow: 1; background-color: white;" placeholder="Email" [ngModelOptions]="{standalone: true}" (ngModelChange)="onEmailInputChange()" #emailInput="ngModel" >
+
+                  <div  *ngIf="valid_email" style="width: 30px; height: 100%; background: white; display: flex; justify-content: center; align-items: center;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="var(--zw-red)" class="bi bi-check" viewBox="0 0 16 16">
+                      <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                    </svg>
+                  </div>
+                </div>
+
+            
+          
+                <div style="display: flex; width: 300px; align-items: center; background: white; overflow: hidden; border: 1px solid #b4b4b4; transition: 0.3s ease-in-out;" #passwordContainer>
+                  <div style="padding: 0 8px 0 8px; display: flex; justify-content: center; background: var(--zw-red); height: 100%; display: flex; align-items: center; justify-content: center;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-lock-fill" viewBox="0 0 16 16">
+                      <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
+                    </svg>
+                  </div>
+                  <input [(ngModel)]="password" type="password" style="flex-grow: 1;  background-color: white;" placeholder="Senha" [ngModelOptions]="{standalone: true}" (ngModelChange)="onPasswordInputChange()">
+
+                  <div  *ngIf="valid_password" style="width: 30px; height: 100%; background: white; display: flex; justify-content: center; align-items: center;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="var(--zw-red)" class="bi bi-check" viewBox="0 0 16 16">
+                      <path d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                    </svg>
+                  </div>
+                  
+                  
+                  
+                </div>
+
+             
+
+                
+                <!-- <input type="text" style="width: 300px; border-radius: 50px; "> -->
+                <!-- <div style="display: flex; align-items: center;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="red" class="bi bi-exclamation-triangle" viewBox="0 0 16 16">
+                    <path d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.146.146 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.163.163 0 0 1-.054.06.116.116 0 0 1-.066.017H1.146a.115.115 0 0 1-.066-.017.163.163 0 0 1-.054-.06.176.176 0 0 1 .002-.183L7.884 2.073a.147.147 0 0 1 .054-.057zm1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566z"/>
+                    <path d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995z"/>
+                  </svg>
+                    <p style=" font-size: .9em; word-spacing: 4px; text-align: center; width: 100%; color: red; font-weight: 500;">Usuário não existe.</p>
+                    </div> -->
+                   
+                </div>
+
+
+                
+                <button #loginButton (click)="login()" style="width: 100%; border: none; color: white; background: var(--zw-red); font-size: 1.3em; padding: 6px 46px 6px 46px; font-weight: 600; border-radius: 0px; box-shadow: none;" >
+                  Login
+                </button>
+
+                
+                <div style="height: 50px; display: flex; justify-content: center; align-items: center;">
+                  <div #spinner class="spinner" *ngIf="loading"></div>
+                </div>
+                
+                <!-- <p>ou</p>
+                  
+                  <a (click)="state = 'register'" href="#"  id="google-login-button" class="google-signin-button">
+                    
+                    <span class="button-text">
+                      Sign in with Google</span>
+                    </a> -->
+                  </div>
+
+                  <p>{{denied_message}}</p>
+                  
+                    <div style="font-size: .8em; display: flex; flex-direction: column; gap: 8px; color: rgb(83, 83, 83); position: absolute; bottom: 45px;">
+                      <p>Esqueceu sua senha? <a (click)="state = 'register'" style="margin-left: 4px;color: var(--zw-red);" id="link-tag">Recuperar Senha</a></p>
+                      <div>
+
+                        <p class="bottom-text" style="text-align: center;">Não tem uma conta? Registrar como:</p>
+                  
+                        <div style="display: flex; gap: 6px; align-items: center; width: 100%; justify-content: center;">
+
+                          <p (click)="goTo('cadastrousuario')" style="margin-left: 4px;  color: var(--zw-red); text-align:center ;" id="link-tag">Usuario</p>
+                          <p>ou</p>
+                          <p (click)="goTo('cadastroONG')" style="margin-left: 4px; text-align:center ;  color: var(--zw-red);" id="link-tag">Instituição</p>
+                        </div>
+                      </div>
+                       
+              
+                    </div>
+                </form>
+        </div>
+
+
+
+    </main>
+</main>
+
+
+
+
+  
+ 
+
+  
+  
+  
+  
+<!--   
+    <div *ngIf="state === 'register'" [@slideToSide] style="background-color: white; width: 100vw; height: 100vh; display: flex; flex-direction: column; justify-content: start; padding-top: 50px; gap: 16px; align-items: center;">
+  
+  
+      <div (click)="state = 'main'" style="position: absolute; top: 30px; left: 30px;">
+        <svg  xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="var(--main-color)" class="bi bi-chevron-left tiny-header-go-back" viewBox="0 0 16 16" style="stroke: var(--main-color);">
+          <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+        </svg>
+      </div>
+  
+      <div style="">
+        <img src="../../assets/logo.png" alt="" srcset="">
+      </div>
+  
+  
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 24px;">
+  
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+  
+          <div style="display: flex; width: 300px; border-radius: 50px; align-items: center; background: white; overflow: hidden; box-shadow: 2px 4px 6px -3px rgba(0, 0, 0, 0.214);">
+            <div style="padding: 0 8px 0 8px; display: flex; justify-content: center;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="18" fill="rgb(180,180,180)" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
+              </svg>
+            </div>
+            <input type="email" style="flex-grow: 1; background-color: white;" placeholder="Email">
+          </div>
+  
+          <div style="display: flex;">
+          <div style="display: flex; width: 150px; border-radius: 50px; align-items: center; background: white; overflow: hidden; box-shadow: 2px 4px 6px -3px rgba(0, 0, 0, 0.214);">
+            <div style="padding: 0 4px 0 4px; display: flex; justify-content: center;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="18" fill="rgb(180,180,180)" class="bi bi-person-fill" viewBox="0 0 16 16">
+                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+              </svg>
+            </div>
+            <input type="text" style="flex-grow: 1; background-color: white;" placeholder="First name">
+          </div>
+          <div style="display: flex; width: 150px; border-radius: 50px; align-items: center; background: white; overflow: hidden; box-shadow: 2px 4px 6px -3px rgba(0, 0, 0, 0.214);">
+            <div style="padding: 0 4px 0 4px; display: flex; justify-content: center;">
+  
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="18" fill="rgb(180,180,180)" class="bi bi-person-fill" viewBox="0 0 16 16">
+                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+              </svg>
+            </div>
+            <input type="text" style="flex-grow: 1; background-color: white;" placeholder="Last name">
+          </div>
+        </div>
+  
+          <div style="display: flex; width: 300px; border-radius: 50px; align-items: center; background: white; overflow: hidden; box-shadow: 2px 4px 6px -3px rgba(0, 0, 0, 0.214);">
+            <div style="padding: 0 8px 0 8px; display: flex; justify-content: center;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="18" fill="rgb(180,180,180)" class="bi bi-lock-fill" viewBox="0 0 16 16">
+                <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
+              </svg>
+            </div>
+            <input type="password" style="flex-grow: 1;  background-color: white;" placeholder="Password">
+          </div>
+          <div style="display: flex; width: 300px; border-radius: 50px; align-items: center; background: white; overflow: hidden; box-shadow: 2px 4px 6px -3px rgba(0, 0, 0, 0.214);">
+            <div style="padding: 0 8px 0 8px; display: flex; justify-content: center;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="18" fill="rgb(180,180,180)" class="bi bi-lock-fill" viewBox="0 0 16 16">
+                <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
+              </svg>
+            </div>
+            <input type="password" style="flex-grow: 1;  background-color: white;" placeholder="Confirm password">
+          </div>
+          <div style="display: flex; width: 300px; border-radius: 50px; align-items: center; background: white; overflow: hidden; box-shadow: 2px 4px 6px -3px rgba(0, 0, 0, 0.214);">
+            <div style="padding: 0 8px 0 8px; display: flex; justify-content: center;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="18" fill="rgb(180,180,180)" class="bi bi-lock-fill" viewBox="0 0 16 16">
+                <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
+              </svg>
+            </div>
+            <input type="text" style="flex-grow: 1;  background-color: white;" placeholder="Endereço">
+          </div>
+  
+           <input type="text" style="width: 300px; border-radius: 50px; "> -->
+        <!-- </div>
+  
+        <button style="width: 300px; border: none; color: white; background-color: var(--zw-red); font-size: 1.2em; padding: 6px 32px 6px 32px; border-radius: 50px; box-shadow: 2px 7px 4px -3px rgba(0, 0, 0, 0.214); font-weight: 500;">Registrar</button>
+  
+        <p class="bottom-text">Já tem uma conta? <a (click)="state = 'login'" id="link-tag">Login</a></p>
+  
+  
+  
+      </div>
+  
+  
+  </div>  -->
+  
+  

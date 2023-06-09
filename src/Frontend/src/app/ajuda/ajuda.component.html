@@ -1,0 +1,145 @@
+<main class="master" [@slideAnimationWithLeave] *ngIf="state === 1" style="background-color: var(--zw-red)!important;" (click)="state = 2">
+
+    <main class="main" style="background-color: var(--zw-red)">
+
+        <div style="display: flex; align-items: center; justify-content: space-evenly; flex-direction: column; gap: 78px; height: 100%; width: 100%;">
+
+            <div style="display: flex; flex-direction: column; gap: 32px; align-items: center; justify-content: space-between;">
+                <img src="../../assets/red/tutorial/find-donation.png" style="width: 180px;" alt="">
+                <h1 class="unic-title-on-screen">ACOMPANHE <span style="color: var(--zw-second)">SOLICITAÇÕES</span> CRIADAS POR INSTUTIIÇÕES</h1>
+            </div>
+            <div style="display: flex; gap: 8px;">
+                <div style="width: 6px; height: 6px; background: var(--zw-second); border-radius: 50%;"></div>
+                <div style="width: 6px; height: 6px; background: white; border-radius: 50%;"></div>
+                <div style="width: 6px; height: 6px; background: white; border-radius: 50%;"></div>
+                <div style="width: 6px; height: 6px; background: white; border-radius: 50%;"></div>
+                <div style="width: 6px; height: 6px; background: white; border-radius: 50%;"></div>
+                <div style="width: 6px; height: 6px; background: white; border-radius: 50%;"></div>
+            </div>
+        </div>
+
+    </main>
+</main>
+
+<main class="master" [@slideAnimationWithLeave] *ngIf="state === 2" (click)="state = 3">
+    <main class="main" style="background-color: white">
+
+        <div style="display: flex; align-items: center; justify-content: space-evenly; flex-direction: column; gap: 78px; height: 100%; width: 100%;">
+
+            <div style="display: flex; flex-direction: column; gap: 32px; align-items: center; justify-content: space-between;">
+                <img src="../../assets/red/tutorial/get-item.png" style="width: 210px;" alt="">
+                <h1 class="unic-title-on-screen" style="color: var(--zw-red)">AGENDE UM DIA PARA REALIZAR SUA <span style="color: var(--zw-second)">DOAÇÃO</span> </h1>
+                <p style="text-align: center; color: rgb(100, 100, 100); padding: 0 16px 0 16px; line-height: 28px; font-size: 1.1em;">Agendamentos podem ser cancelados à qualquer momento, havendo um limite de dois agendamentos ativos por usuário, que passam a nao ser ativos quando confirmados pela Instituição ou cancelados pelo usuario.</p>
+          
+            </div>
+            <div style="display: flex; gap: 8px;">
+                <div style="width: 6px; height: 6px; background: var(--zw-red); border-radius: 50%;"></div>
+                <div style="width: 6px; height: 6px; background: var(--zw-red); border-radius: 50%;"></div>
+                <div style="width: 6px; height: 6px; background: var(--zw-second); border-radius: 50%;"></div>
+                <div style="width: 6px; height: 6px; background: var(--zw-red); border-radius: 50%;"></div>
+                <div style="width: 6px; height: 6px; background: var(--zw-red); border-radius: 50%;"></div>
+                <div style="width: 6px; height: 6px; background: var(--zw-red); border-radius: 50%;"></div>
+            </div>
+        </div>
+    
+    </main>
+</main>
+
+<main class="master" [@slideAnimationWithLeave] *ngIf="state === 3" (click)="state = 4">
+    <main class="main" style="background-color: var(--zw-red)">
+
+        <div style="display: flex; align-items: center; justify-content: space-evenly; flex-direction: column; gap: 78px; height: 100%; width: 100%;">
+
+            <div style="display: flex; flex-direction: column; gap: 32px; align-items: center; justify-content: space-between;">
+                <img src="../../assets/red/tutorial/give-item.png" style="width: 200px;" alt="">
+                <h1 class="unic-title-on-screen">SEPARE OS ITENS REFERENTES AO SEU <span style="color: var(--zw-second)">AGENDAMENTO</span> </h1>
+
+          
+            </div>
+            <div style="display: flex; gap: 8px;">
+                <div style="width: 6px; height: 6px; background: white; border-radius: 50%;"></div>
+                <div style="width: 6px; height: 6px; background: var(--zw-second); border-radius: 50%;"></div>
+                <div style="width: 6px; height: 6px; background: white; border-radius: 50%;"></div>
+                <div style="width: 6px; height: 6px; background: white; border-radius: 50%;"></div>
+                <div style="width: 6px; height: 6px; background: white; border-radius: 50%;"></div>
+                <div style="width: 6px; height: 6px; background: white; border-radius: 50%;"></div>
+            </div>
+        </div>
+    
+    </main>
+</main>
+
+<main class="master" [@slideAnimationWithLeave] *ngIf="state === 4" (click)="state = 5">
+    <main class="main" style="background-color: white">
+
+        <div style="display: flex; align-items: center; justify-content: space-evenly; flex-direction: column; gap: 78px; height: 100%; width: 100%;">
+
+            <div style="display: flex; flex-direction: column; gap: 32px; align-items: center; justify-content: space-between;">
+                <h1 class="unic-title-on-screen" style="color: var(--zw-red)">FAÇA A ENTREGA</h1>
+                <img src="../../assets/red/tutorial/recipt.png" style="width: 250px;" alt="">
+                <p style="text-align: center; color: rgb(100, 100, 100); padding: 0 16px 0 16px; line-height: 28px; font-size: 1.1em;">Ao fazer a entrega referente à uma solicitação, a Instituição confirma seu agendamento e a partir disso ele se tornará uma doação efetivamente.</p>
+          
+            </div>
+            <div style="display: flex; gap: 8px;">
+                <div style="width: 6px; height: 6px; background: var(--zw-red); border-radius: 50%;"></div>
+                <div style="width: 6px; height: 6px; background: var(--zw-red); border-radius: 50%;"></div>
+                <div style="width: 6px; height: 6px; background: var(--zw-red); border-radius: 50%;"></div>
+                <div style="width: 6px; height: 6px; background: var(--zw-second); border-radius: 50%;"></div>
+                <div style="width: 6px; height: 6px; background: var(--zw-red); border-radius: 50%;"></div>
+                <div style="width: 6px; height: 6px; background: var(--zw-red); border-radius: 50%;"></div>
+            </div>
+        </div>
+    
+    </main>
+</main>
+
+<main class="master" [@slideAnimationWithLeave] *ngIf="state === 5" (click)="state = 6">
+    <main class="main" style="background-color: white">
+
+        <div style="display: flex; align-items: center; justify-content: space-evenly; flex-direction: column; gap: 78px; height: 100%; width: 100%;">
+
+            <div style="display: flex; flex-direction: column; gap: 32px; align-items: center; justify-content: space-between;">
+                <h1 class="unic-title-on-screen" style="color: var(--zw-red)">AGUARDE A CONFIRMAÇÃO DA INSTITUIÇÃO</h1>
+                <img src="../../assets/fifth.png" style="width: 250px;" alt="">
+                <p style="text-align: center; color: rgb(100, 100, 100); padding: 0 16px 0 16px; line-height: 28px; font-size: 1.1em;">Ao realizar uma entrega, voce acompanha a confirmação do seu agendamento na sua página de Perfil. Após a entrega e sua confirmação, a instutição deve confirma-lo.</p>
+
+          
+            </div>
+            <div style="display: flex; gap: 8px;">
+                <div style="width: 6px; height: 6px; background: var(--zw-red); border-radius: 50%;"></div>
+                <div style="width: 6px; height: 6px; background: var(--zw-red); border-radius: 50%;"></div>
+                <div style="width: 6px; height: 6px; background: var(--zw-red); border-radius: 50%;"></div>
+                <div style="width: 6px; height: 6px; background: var(--zw-red); border-radius: 50%;"></div>
+                <div style="width: 6px; height: 6px; background: var(--zw-second); border-radius: 50%;"></div>
+                <div style="width: 6px; height: 6px; background: var(--zw-red); border-radius: 50%;"></div>
+            </div>
+        </div>
+    
+    </main>
+</main>
+
+
+<main class="master" [@slideAnimationWithLeave] *ngIf="state === 6" (click)="goTo('login')">
+    <main class="main" style="background-color: var(--zw-red)">
+
+        <div style="display: flex; align-items: center; justify-content: space-evenly; flex-direction: column; gap: 78px; height: 100%; width: 100%;">
+
+            <div style="display: flex; flex-direction: column; gap: 16px; align-items: center; justify-content: space-between;">
+                <h1 class="unic-title-on-screen">VISUALIZE SEU <span style="color: var(--zw-second)">COMPROVANTE</span> PELO APLICATIVO.</h1>
+                <img src="../../assets/sixth.png" style="width: 350px;" alt="">
+                <p  style="text-align: center; color: white; padding: 0 16px 0 16px; line-height: 28px; font-size: 1.1em;">Agendamentos confirmados (Doaçoes) ficam listados em seu Perfil, na página de Doações, e podem ser usados para emitir comprovantes.</p>
+
+          
+            </div>
+            <div style="display: flex; gap: 8px;">
+                <div style="width: 6px; height: 6px; background: white; border-radius: 50%;"></div>
+                <div style="width: 6px; height: 6px; background: white; border-radius: 50%;"></div>
+                <div style="width: 6px; height: 6px; background: white; border-radius: 50%;"></div>
+                <div style="width: 6px; height: 6px; background: white; border-radius: 50%;"></div>
+                <div style="width: 6px; height: 6px; background: white; border-radius: 50%;"></div>
+                <div style="width: 6px; height: 6px; background: var(--zw-second); border-radius: 50%;"></div>
+            </div>
+        </div>
+    
+    </main>
+</main>
