@@ -1,0 +1,39 @@
+{
+  "name": "zero-waste-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "build": "npx tsc",
+    "start": "node dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sendgrid/mail": "^7.7.0",
+    "aws-sdk": "^2.1349.0",
+    "dotenv": "^16.0.3",
+    "express-rate-limit": "^6.7.0",
+    "firebase-admin": "^11.5.0",
+    "googleapis": "^117.0.0",
+    "joi": "^17.9.1",
+    "jsonwebtoken": "^9.0.0",
+    "mongodb": "^5.1.0",
+    "node-cache": "^5.1.2",
+    "pdfkit": "^0.13.0",
+    "redis": "^4.6.5",
+    "ws": "^8.13.0"
+  },
+  "devDependencies": {
+    "@types/express-rate-limit": "^6.0.0",
+    "@types/node": "^18.15.11",
+    "@types/pdfkit": "^0.12.9",
+    "@types/ws": "^8.5.4",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.0.4"
+  }
+}
