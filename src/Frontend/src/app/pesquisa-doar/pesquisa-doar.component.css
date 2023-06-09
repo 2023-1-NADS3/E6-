@@ -1,0 +1,136 @@
+.box{
+    width: 100%;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.voltar-btn{
+    background-color: #D99D2A;
+}
+.voltar-btn img{
+    filter:invert(100%);
+}
+.filtragem{
+    background-color: #D99D2A;
+    width: 100%;
+    position: relative;
+    top: -21px;
+    border-radius: 0 0px 20px 20px;
+    padding: 0 0 10px 0px;
+    filter: drop-shadow(0px 5px 3px #00000049);
+}
+.filtragem h2{
+    margin-left: 10px;
+    color: white;
+}
+.filtros{
+    width: auto;
+    display: grid;
+    margin: 20px;
+}
+.filtragem .filtros select{
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    border-bottom:solid 2px white;
+    width: 100%;
+    color: white;
+}
+.solicitacoes{
+    display: grid;
+    margin: 0 20px;
+}
+.solicitacao{
+    border: solid 2px #CBCBCB;
+    padding: 0 20px 20px 20px;
+    margin-bottom: 25px;
+}
+.solicitacao p{
+    font-weight: bold;
+}
+.solicitacao p span{
+    color: #CA262C;
+}
+.solicitacao a{
+    text-decoration: none;
+    color: #8FB021;
+}
+
+/* .pair-of-buttons{
+    display: flex;
+    width: 100%;
+    background-color: white;
+    justify-content: end;
+    gap: 24px;
+}
+
+.view-more-button{
+    color: var(--zw-red);
+    background-color: white;
+    border: none;
+}
+.like-button, .dislike-button{
+    padding: 2px 8px 2px 8px;
+    border: none;
+    background-color: white;
+    color: var(--zw-red);
+}
+.dislike-button{
+    color: var(--zw-red);
+}
+
+.company{
+    flex-direction: column;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* pagina de ong (minha) */
+.bottom-company-info{
+    display: flex;
+    justify-content: space-evenly;
+    height: fit-content;
+}
+
+
+.ong-main-info{
+    text-align: center;
+
+}
+.ong-pic{
+    margin: auto;
+    width: 75px;
+    background-color: gray;
+    border-radius: 50%;
+    height: 75px;
+}
+.pair-of-buttons-container{
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.requests{
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex-grow: 1;
+    background-color: gray;
+}
+
+.bottom-info-container{
+    text-align: center;
+}

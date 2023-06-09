@@ -1,0 +1,138 @@
+th{
+    background-color: var(--zw-red);
+    padding: 12px 0 12px 0;
+    color: white;
+}
+
+td{
+    text-align: center;
+    border: 1px solid rgb(182, 182, 182);
+    padding: 8px 0 8px 0;
+}
+
+tr{
+    margin: 0;
+    padding: 0;
+}
+
+table{
+    border-collapse: collapse;
+    gap: 0;
+    width: 100%;
+}
+
+.truncate {
+    max-width: 60px; /* Adjust the width as per your requirement */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: start!important;
+    padding: 8px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* his */
+  .box{
+    padding: 20px;
+}
+h2{
+    color: #9E9E9E;
+}
+h3{
+    color: #D99D2A;
+}
+
+.holder{
+    display: contents;
+    width: 100%;
+}
+.holder .info{
+    display: flex;
+    justify-content: space-between;
+}
+.dia{
+    margin-right: 20px;
+}
+.dia .select{
+    width: 100%;
+}
+.hora .input{
+    width: fit-content;
+    max-width: 100px;
+}
+.holder .dia{
+    width: 100%;
+}
+.holder .hora{
+    width: fit-content;
+    
+}
+.info{
+    padding-bottom: 20px;
+    border-bottom: 2px dashed #C6C6C6;
+}
+.alimentoInfo{
+    display: flex;
+    justify-content: space-between;
+}
+.alimento {
+    width: 100%;
+    margin-right: 20px;
+}
+.alimento .select{
+    width: 100%;
+}
+.quantidade .input{
+    max-width: 100px;
+}
+.envia-btn img{
+    margin-right: 10px;  
+}
+.confirma-btn{
+    max-width: 300px;
+    width: 100%;
+}
+@media screen and (max-width: 430px){
+    .hora .input{
+        max-width: 100%;
+    }
+    .quantidade{
+        margin-right: 20px;
+    }
+    .quantidade .input{
+       max-width: 430px;
+       width: 100%;
+    }   
+    .alimentoInfo{
+        display: contents;
+    }
+}

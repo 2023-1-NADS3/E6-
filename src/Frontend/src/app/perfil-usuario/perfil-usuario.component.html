@@ -1,0 +1,436 @@
+
+<!-- <main class="main" >
+
+    <div class="categorias">
+        <button class="categoria" (click)="autenticate('solicitacoes')">
+            <div><img src="../../assets/coracao-de-mao.png" alt="icone" class="icone"></div>
+            <p>Ver minhas Solicitações</p>
+        </button>
+        <a class="break"></a>
+        <button class="categoria" (click)="autenticate('comprovante')">
+            <div><img src="../../assets/fatura-de-arquivo.png" alt="icone" class="icone"></div>
+            <p>Gerar Comprovante</p>
+        </button>
+         <a class="break"></a>
+        <button class="categoria" (click)="goToPage('meus-dados')">
+            <div><img src="../../assets/definicoes.png" alt="icone" class="icone"></div>
+            <p>Meu Dados</p>
+        </button>
+
+    </div>
+</main> -->
+
+<main class="master" [@slideAnimation]>
+    <app-header [back]="'perfil'" [color]=true [sidebarButton]="true"></app-header>
+
+<main class="main">
+
+
+    <span class="titles-box" style="flex-direction: column; align-items: flex-start; margin-top: 8px; font-size: 1.5em;">
+        <h2 >Olá, <span style="color: var(--zw-red);">{{user?.name?.charAt(0).toUpperCase() + user?.name?.slice(1).split(' ')[0]}}</span></h2>
+        <!-- <h3>Como voce está hoje?</h3> -->
+        <h4>Bem vindo!</h4>
+        <div *ngIf="user?.type === 'ong'" style="color: rgb(160,160,160); display: flex; gap: 4px; align-items: center;">
+            <!-- <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="rgb(160,160,160)" class="bi bi-heart" viewBox="0 0 16 16">
+                <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+              </svg> -->
+              <h4>0</h4>
+        </div>
+    </span>
+
+
+
+    <!-- <div class="search-input-container">
+        <input type="text" placeholder="Procurar por solicitaçoes" class="search-input">
+        <button class="search-input-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+              </svg>
+        </button>
+    </div> -->
+
+    <!-- <span class="titles-box">
+        <h3 class="box-title">Minhas Açoes</h3>
+        <p class="s-text clear-text" onclick="window.location.href= '/categorias'">Ver todos</p>
+    </span> -->
+    <div class="categories">
+        <div class="categories-inside">
+
+        <div class="category" (click)="goTo('meus-dados')">
+            <div class="category-circle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
+                  </svg>
+            </div>
+            <p class="s-text">Perfil</p>
+        </div>
+        <div class="category" *ngIf="user?.type === 'ong'" (click)="goTo('add-solicitacao')">
+            <div class="category-circle">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                    <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                  </svg>
+            </div>
+            <p class="s-text">Solicitar</p>
+        </div>
+
+        <div  *ngIf="user?.type === 'ong'" class="category" (click)="goTo('minhas-solicitacoes')" style="position: relative;">
+            <div class="category-circle">
+                <span *ngIf="my_not_viewd_donations_count > 0" style="background: var(--zw-second); color: white; border-radius: 50%; display: flex; justify-content: center; align-items: center; position: absolute; top: 8px; right: 10px; width: 18px; height: 18px; font-weight: 900; padding: 4px;">{{my_not_viewd_donations_count}}</span>
+
+           
+                  <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-box-seam" viewBox="0 0 16 16">
+                    <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2l-2.218-.887zm3.564 1.426L5.596 5 8 5.961 14.154 3.5l-2.404-.961zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z"/>
+                  </svg>
+
+            </div>
+            <p class="s-text elip fl" style="overflow: hidden;">Solicitações</p>
+        </div>
+        <div  *ngIf="user?.type === 'user'" class="category" (click)="goTo('meus-agendamentos')" style="position: relative;">
+            <div class="category-circle">
+                <span *ngIf="my_not_viewd_donations_count > 0" style="background: var(--zw-second); color: white; border-radius: 50%; display: flex; justify-content: center; align-items: center; position: absolute; top: 8px; right: 10px; width: 18px; height: 18px; font-weight: 900; padding: 4px;">{{my_not_viewd_donations_count}}</span>
+
+           
+                  <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-box-seam" viewBox="0 0 16 16">
+                    <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2l-2.218-.887zm3.564 1.426L5.596 5 8 5.961 14.154 3.5l-2.404-.961zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z"/>
+                  </svg>
+
+            </div>
+            <p class="s-text elip fl" style="overflow: hidden;">Agendamentos</p>
+        </div>
+        <div class="category" (click)="goTo('minhasdoacoes')" *ngIf="user?.type === 'user'"  style="position: relative;">
+            <div class="category-circle">
+                <span *ngIf="my_not_viewd_donations_count > 0" style="background: rgb(43, 217, 124); color: white; border-radius: 50%; display: flex; justify-content: center; align-items: center; position: absolute; top: 8px; right: 10px; width: 18px; height: 18px; font-weight: 900; padding: 4px;">{{my_not_viewd_donations_count}}</span>
+
+           
+                  <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-box-seam" viewBox="0 0 16 16">
+                    <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2l-2.218-.887zm3.564 1.426L5.596 5 8 5.961 14.154 3.5l-2.404-.961zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z"/>
+                  </svg>
+
+            </div>
+            <p class="s-text elip fl" style="overflow: hidden;">Doaçoes</p>
+        </div>
+        <!-- <div class="category">
+            <div class="category-circle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-chat-right-dots" viewBox="0 0 16 16">
+                    <path d="M2 1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9.586a2 2 0 0 1 1.414.586l2 2V2a1 1 0 0 0-1-1H2zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12z"/>
+                    <path d="M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                  </svg>
+            </div>
+            <p class="s-text">Mensagens</p>
+        </div> -->
+        <div class="category">
+            <div class="category-circle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-hand-thumbs-up" viewBox="0 0 16 16">
+                    <path d="M8.864.046C7.908-.193 7.02.53 6.956 1.466c-.072 1.051-.23 2.016-.428 2.59-.125.36-.479 1.013-1.04 1.639-.557.623-1.282 1.178-2.131 1.41C2.685 7.288 2 7.87 2 8.72v4.001c0 .845.682 1.464 1.448 1.545 1.07.114 1.564.415 2.068.723l.048.03c.272.165.578.348.97.484.397.136.861.217 1.466.217h3.5c.937 0 1.599-.477 1.934-1.064a1.86 1.86 0 0 0 .254-.912c0-.152-.023-.312-.077-.464.201-.263.38-.578.488-.901.11-.33.172-.762.004-1.149.069-.13.12-.269.159-.403.077-.27.113-.568.113-.857 0-.288-.036-.585-.113-.856a2.144 2.144 0 0 0-.138-.362 1.9 1.9 0 0 0 .234-1.734c-.206-.592-.682-1.1-1.2-1.272-.847-.282-1.803-.276-2.516-.211a9.84 9.84 0 0 0-.443.05 9.365 9.365 0 0 0-.062-4.509A1.38 1.38 0 0 0 9.125.111L8.864.046zM11.5 14.721H8c-.51 0-.863-.069-1.14-.164-.281-.097-.506-.228-.776-.393l-.04-.024c-.555-.339-1.198-.731-2.49-.868-.333-.036-.554-.29-.554-.55V8.72c0-.254.226-.543.62-.65 1.095-.3 1.977-.996 2.614-1.708.635-.71 1.064-1.475 1.238-1.978.243-.7.407-1.768.482-2.85.025-.362.36-.594.667-.518l.262.066c.16.04.258.143.288.255a8.34 8.34 0 0 1-.145 4.725.5.5 0 0 0 .595.644l.003-.001.014-.003.058-.014a8.908 8.908 0 0 1 1.036-.157c.663-.06 1.457-.054 2.11.164.175.058.45.3.57.65.107.308.087.67-.266 1.022l-.353.353.353.354c.043.043.105.141.154.315.048.167.075.37.075.581 0 .212-.027.414-.075.582-.05.174-.111.272-.154.315l-.353.353.353.354c.047.047.109.177.005.488a2.224 2.224 0 0 1-.505.805l-.353.353.353.354c.006.005.041.05.041.17a.866.866 0 0 1-.121.416c-.165.288-.503.56-1.066.56z"/>
+                  </svg>
+            </div>
+            <p class="s-text" (click)="goTo('meus-likes')">Meus Likes</p>
+        </div>
+        <div class="category" *ngIf="user?.type === 'user'">
+            <div class="category-circle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-filetype-pdf" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M14 4.5V14a2 2 0 0 1-2 2h-1v-1h1a1 1 0 0 0 1-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5L14 4.5ZM1.6 11.85H0v3.999h.791v-1.342h.803c.287 0 .531-.057.732-.173.203-.117.358-.275.463-.474a1.42 1.42 0 0 0 .161-.677c0-.25-.053-.476-.158-.677a1.176 1.176 0 0 0-.46-.477c-.2-.12-.443-.179-.732-.179Zm.545 1.333a.795.795 0 0 1-.085.38.574.574 0 0 1-.238.241.794.794 0 0 1-.375.082H.788V12.48h.66c.218 0 .389.06.512.181.123.122.185.296.185.522Zm1.217-1.333v3.999h1.46c.401 0 .734-.08.998-.237a1.45 1.45 0 0 0 .595-.689c.13-.3.196-.662.196-1.084 0-.42-.065-.778-.196-1.075a1.426 1.426 0 0 0-.589-.68c-.264-.156-.599-.234-1.005-.234H3.362Zm.791.645h.563c.248 0 .45.05.609.152a.89.89 0 0 1 .354.454c.079.201.118.452.118.753a2.3 2.3 0 0 1-.068.592 1.14 1.14 0 0 1-.196.422.8.8 0 0 1-.334.252 1.298 1.298 0 0 1-.483.082h-.563v-2.707Zm3.743 1.763v1.591h-.79V11.85h2.548v.653H7.896v1.117h1.606v.638H7.896Z"/>
+                  </svg>
+            </div>
+            <p class="s-text">Comprovantes</p>
+        </div>
+
+        <div class="category" (click)="goTo('ajuda')">
+            <div class="category-circle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-question-circle" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                    <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"/>
+                  </svg>
+            </div>
+            <p class="s-text">Ajuda</p>
+        </div>
+    </div>
+    </div>
+
+
+    <div style="display: flex; justify-content: space-between; gap: 8px; margin-top: 8px;">
+    
+        <div (click)="goTo('orders')" style="height: 220px; width: 50%; background: var(--zw-red-clear); border-radius: 16px; display: flex; justify-content: center; align-items: center; flex-direction: column; gap: 8px;"
+        >
+            <img src="../../assets/red/profile/donations.png" style="width: 120px;" alt="">
+            <h3 style="text-align:center; color: white; padding: 0 16px 0 16px;">Procurar Solicitaçoes</h3>
+        </div>
+        <div (click)="goTo('ongs')" style="height: 220px; width: 50%; background: white; border-radius: 16px; display: flex; justify-content: center; align-items: center; flex-direction: column; gap: 8px; box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.112);">
+        <img src="../../assets/red/profile/ongs.png" style="width: 120px;" alt="">
+                <h3 style="text-align:center; color: var(--zw-red-dark)">Procurar Instituiçoes</h3>
+    </div>
+    </div>
+
+
+
+
+
+    <span class="titles-box" *ngIf="user?.type === 'user'">
+        <h3 class="box-title">Agendamentos Ativos ({{my_appointments_count}}/2)</h3>
+        <!-- <svg *ngIf="is_appointments_open === 0 && user?.type === 'user'" (click)="toggleAppointmentMenu()" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="rgb(180,180,180)" class="bi bi-chevron-right" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+          </svg> -->
+
+          <!-- <svg *ngIf="is_appointments_open === 1" (click)="toggleAppointmentMenu()" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="rgb(180,180,180)" class="bi bi-chevron-down" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+          </svg> -->
+    </span>
+    <div *ngIf="is_appointments_open === 1 && user?.type === 'user'" class="orders-container" >
+        <div *ngIf="my_appointments?.length === 0 || !my_appointments" style="margin: auto; display: flex; justify-content: center; flex-direction: column; width: 100%; align-items: center; background: white; padding: 42px 16px 42px 16px; gap: 12px; color:rgb(170,170,170);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="rgb(150,150,150)" class="bi bi-clipboard" viewBox="0 0 16 16">
+                <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+            </svg>
+            <p style="font-weight: 600; width: fit-content; text-align: center; width: 250px;">Voce não possui nenhum Agendamento...</p>
+               
+            <button #loginButton (click)="goTo('/orders')" style="width: fit-content; border: none; color: white; background: var(--zw-red); font-size: 1.3em; padding: 6px 36px 6px 36px; font-weight: 600; border-radius: 0px; box-shadow: none;" >
+                Procurar
+              </button>
+        </div>
+            <!-- <img src="../../assets/no_requests-removebg-preview (1).png" style="margin: auto; width: 225px;"alt=""> -->
+
+            <div *ngFor="let appointment of my_appointments">
+                <div class="request" style="position: relative;"
+                [style.background]="appointment.confirmed ? 'rgb(240,240,240)' : null">
+
+                <div *ngIf="appointment.confirmed" style="position: absolute; inset: 0 16px 0 auto; margin: auto; border-radius: 25px; width: fit-content; height: fit-content;transform: rotate(30deg);  display: flex; justify-content: center; align-items: center; gap: 4px;">
+                   
+                      <img src="../../assets/red/profile/confirmed.png" style="width: 75px;" alt="">
+                 
+                </div>
+
+                    <div style="display: flex; justify-content: space-between; width: 100%;">
+
+                        <div style="font-size: .8em; padding: 4px 16px 4px 16px; background-color: var(--zw-red); color: white; border-radius: 25px;"
+                        [style.background]="appointment.confirmed ? 'rgb(170,170,170)' : 'var(--zw-red)'"
+                        >
+                            Campanha Ativa
+                        </div>
+
+                        <div style="border-radius: 50%; padding: 2px; width: 22px; height: 22px; display: flex; justify-content: center; align-items: center;"
+                        [style.background]="appointment.confirmed ? 'rgb(170,170,170)' : 'var(--zw-red)'"
+                        >
+                            <svg (click)="goTo('ajuda')"  xmlns="http://www.w3.org/2000/svg" width="16" height="16" class="bi bi-question" viewBox="0 0 16 16"
+                            [style.fill]="appointment.confirmed ? 'white' : 'rgb(170,170,170)'"
+                            >
+                                <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"/>
+                              </svg>
+                        </div>
+                    </div>
+
+                    <div style="width: 100%; display: flex; flex-direction: column; align-items: flex-start; gap: 8px;">
+                        <!-- <h4 class="company-name elip fl" style="text-transform: capitalize;">{{appointment?.name}}</h4> -->
+                        <!-- <p class="company-description elip sl s-text clear-text">{{appointment?.description}}</p> -->
+                        <p style="font-weight: 900; color: rgb(150,150,150)">#{{appointment._id}}</p>
+                        <div style="display: flex; align-items: center; gap: 6px;">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="rgb(170,170,170)" class="bi bi-clock-fill" viewBox="0 0 16 16">
+                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                              </svg>
+                              <div style="display: flex; align-items: center; gap: 6px;">
+                                  <p [style.color]="appointment.confirmed ? 'rgb(180,180,180)' : 'black'">10:00 às 18:00 </p>
+                                  <p class="elip fl" style="padding: 2px 6px 2px 6px; text-transform: uppercase; color: white; font-weight: 700; width: fit-content;"
+                                  [style.background]="appointment.confirmed ? 'rgb(180,180,180)' : 'var(--zw-red)'">{{appointment?.day}}</p>
+                                  
+                                </div>
+
+                        </div>
+
+                        <div style="display: flex; align-items: center; justify-content: left; gap: 6px; width: fit-content;">
+                            <!-- <div style=" margin: 0;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="rgb(170,170,170)" class="bi bi-bag-fill" viewBox="0 0 16 16">
+                                    <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5z"/>
+                                </svg>
+                            </div> -->
+                              <div style="width: fit-content;">
+                                <!-- <div style="margin: 0;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="rgb(170,170,170)" class="bi bi-bag-fill" viewBox="0 0 16 16">
+                                        <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5z"/>
+                                    </svg>
+                                </div> -->
+
+                                <div *ngFor="let item of appointment?.items; let i = index">
+                                    
+                                    
+                                    <div style="margin: 0;">
+                                        <p *ngIf="item !== 0" [style.color]="appointment.confirmed ? 'rgb(180,180,180)' : 'black'"
+                                        style=" margin: 0; display: flex; align-items: center; gap: 4px;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="rgb(170,170,170)" class="bi bi-bag-fill" viewBox="0 0 16 16">
+                                            <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5z"/>
+                                        </svg>
+                                        {{possible_items[i]}}: {{item}} Kg</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+        
+                     
+                      
+
+                        <div style="display: flex; width: 100%; justify-content: space-between;">
+
+                            <button *ngIf="!appointment.confirmed" (click)="desmarcar(appointment._id)"  style="width:fit-content; border: none; color: white; background: var(--zw-red); font-size: 1.3em; padding: 6px 16px 6px 16px; font-weight: 600; border-radius: 0px; box-shadow: none;" >Desmarcar</button>
+
+                            <button *ngIf="!appointment.confirmed" (click)="goToOrderPage(appointment?.order_parent_id)"  style="width:fit-content; border: none; color: var(--zw-red); background: white; font-size: 1.3em; padding: 6px 16px 6px 16px; font-weight: 600; border-radius: 0px; box-shadow: none;" >
+                                Ver Solicitação
+                            </button>
+
+                            <button *ngIf="appointment.confirmed"  style="width:fit-content; border: none; color: rgb(170,170,170); background: whitesmoke; font-size: 1.3em; padding: 6px 16px 6px 16px; font-weight: 600; border-radius: 0px; box-shadow: none;" >Desmarcar</button>
+                            
+                            <button *ngIf="appointment.confirmed" (click)="goToOrderPage(appointment?.order_parent_id)"  style="width:fit-content; border: none; color: rgb(170,170,170); background: whitesmoke; font-size: 1.3em; padding: 6px 16px 6px 16px; font-weight: 600; border-radius: 0px; box-shadow: none;" >
+                                Ver Solicitação
+                            </button>
+                        </div>
+                </div>
+
+            </div>
+    </div>
+
+
+
+
+
+
+
+
+    <span class="titles-box" *ngIf="user?.type === 'ong'">
+        <h3 class="box-title">Minhas Solicitaçoes ({{my_orders?.length}}/2)</h3>
+        <!-- <svg *ngIf="is_orders_open === 0" (click)="toggleOrderMenu()" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="rgb(180,180,180)" class="bi bi-chevron-right" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"/>
+          </svg>
+
+          <svg *ngIf="is_orders_open === 1" (click)="toggleOrderMenu()" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="rgb(180,180,180)" class="bi bi-chevron-down" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+          </svg> -->
+    </span>
+
+    <!-- <div class="requests"> -->
+    <div *ngIf="is_orders_open === 1 && user?.type === 'ong'" class="orders-container" >
+
+        <div *ngIf="my_orders?.length === 0" style="margin: auto; display: flex; justify-content: center; flex-direction: column; width: 100%; align-items: center; background: white; padding: 42px 16px 42px 16px; gap: 12px; color:rgb(170,170,170);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="rgb(150,150,150)" class="bi bi-clipboard" viewBox="0 0 16 16">
+                <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+            </svg>
+            <p style="font-weight: 600; width: fit-content; text-align: center; width: 250px;">Voce não possui nenhuma Solicitção...</p>
+        </div>
+            <!-- <img src="../../assets/no_requests-removebg-preview (1).png" style="margin: auto; width: 225px;"alt=""> -->
+
+            <div *ngFor="let order of my_orders">
+                <div class="request">
+                    <div class="request-info">
+                        <h4 class="company-name elip fl" style="text-transform: capitalize;">{{order?.name}}</h4>
+                        <p class="company-description elip sl s-text" style="color: rgb(65,65,65);">{{order?.description}}</p>
+                        
+                        <!-- <p class="elip fl" style="margin-top: 6px;">Itens: 
+                         <div *ngFor="item of order?.items; let j = index">
+                                <span *ngIf="order?.items[j] > 0">
+                                    {{possible_items[j]}}
+                                </span>
+                            </div>  -->
+                    </div>
+                    <div style="display: flex; gap: 12px; align-items: center; width: 100%;">
+                        <p>{{((order?.sum_donated / order?.sum_items) * 100).toString().split('.')[0]}}%</p>
+                        <div class="progress-bar-outside">
+                            <div class="progress-bar-inside" [style.width.%]="((order?.sum_donated / order?.sum_items) * 100) + 2">
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; width: 100%; gap: 16px;">
+                        <button  (click)="goToOrderPage(order?._id)" style="width: 40%; border: none; color: var(--zw-red); background: white; font-size: 1.3em; padding: 6px 16px 6px 16px; font-weight: 600; border-radius: 0px; box-shadow: none;" >
+                            Ver
+                        </button>
+                        <button  (click)="goToAppointmentsFromOrderPage(order?._id)" style="width: 100%; border: none; color: white; background: var(--zw-red); font-size: 1.3em; padding: 6px 16px 6px 16px; font-weight: 600; border-radius: 0px; box-shadow: none;" >
+                            Agendamentos
+                        </button>
+                    </div>
+              
+                </div>
+
+            </div>
+    </div>
+
+
+    <!-- <span class="titles-box">
+        <span>
+            <h3 class="box-title">Top 4 Instituiçoes </h3>
+        </span>
+        <p class="s-text clear-text" (click)="goTo('ongs')">Ver Mais</p>
+    </span>
+
+    <div class="companies">
+        <div *ngFor="let ong of most_liked_ongs; let i = index">
+            <div style="width: 100%; background: white; height: fit-content; margin: 4px 0 4px 0; padding: 4px 16px 4px 16px; max-width: 100%;">
+                <h2 class="elip sl" style="width: 100%; color: black; text-transform: capitalize;">{{ong?.ongInfo?.name}}</h2>
+                <div class="elip fifl" style="background: white; max-width: 100%; height: fit-content;">
+                    <p style="max-width: 100%; word-break: break-all;">{{ong?.ongInfo?.description}}</p>
+                </div>
+                <div style="display: flex; align-items: center; justify-content: space-between; padding: 12px; ">
+                    <div style="display: flex; align-items: flex-start; flex-direction: column; justify-content: start;">
+                        <button  (click)="goToOngPage(ong?.ongInfo?._id)" style="display: flex; width: fit-content; padding: 4px 16px 4px 16px; background: white; color: var(--zw-red); border: none; font-size: 1.2em; font-weight: 700;">Ver Mais</button>
+                    </div>
+                    <div style="display: flex; align-items: center; justify-content: end;">
+
+                        <h2 style="font-weight: 900; font-size: 2.1em; margin: 0;margin-right: 6px;">{{ong?.likedCount}}</h2>
+                        
+                    <svg *ngIf="!ong.liked" (click)="likeOng(ong.ongInfo?._id, i)" style="margin-top: 2px;" xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                        <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+                      </svg>
+                      
+
+                      <svg *ngIf="ong.liked" (click)="unlikeOng(ong.ongInfo?._id, i)" xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="var(--zw-red)" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                      </svg>
+
+                      <p>{{ong?.created_at}}</p>
+                    </div>
+              
+                </div>
+            </div>
+    </div>
+    </div> -->
+
+
+
+    <span class="titles-box">
+        <span>
+            <h3 class="box-title">Solicitado Recentemente</h3>
+        </span>
+        <p class="s-text clear-text" (click)="goTo('orders')">Ver Todas</p>
+    </span>
+
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div *ngFor="let order of last_orders; let i = index;">
+            <div style="width: 100%; height: fit-content; background: white; border-radius: 16px; padding: 8px 16px 8px 16px; gap: 8px; display: flex; flex-direction: column;" (click)="goToOrderPage(order._id)">
+            <div>
+                <p style="font-size: 1.2em; font-weight: 900;" class="elip sl">{{order?.name}}</p>
+                <p class="elip tl">{{order?.description}}</p>
+            </div>
+            <div style="display: flex; gap: 12px; align-items: center; width: 100%;">
+                <p>{{((order?.sum_donated / order?.sum_items) * 100).toString().split('.')[0]}}%</p>
+                <div class="progress-bar-outside">
+                    <div class="progress-bar-inside" [style.width.%]="((order?.sum_donated / order?.sum_items) * 100) + 2">
+                    </div>
+                </div>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <p>{{order?.created_at?.split('-')[0]}}</p>
+                <p>ver detalhes</p>
+            </div> 
+        </div>
+        </div>
+    </div>
+
+
+    
+</main>
+
+</main>
+<!-- <div style="position: absolute; bottom: -500px; height: 500px; width: 100%; background-color: white; transition: 0.3s ease-in-out;" #appointmentContainer>
+    <div #spinner class="spinner" *ngIf="loading"></div>
+</div> -->

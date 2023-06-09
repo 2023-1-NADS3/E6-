@@ -1,0 +1,251 @@
+
+
+<main class="master" *ngIf="is_open === 1" [@slideToSide]>
+    <!-- <app-header [back]="'perfil'" [color]="true" ></app-header> -->
+    <main class="main" style=" background: blue;">
+
+        <button (click)="is_open = 0; marking_appointment = 0">back</button>
+
+<div style="width: 300px; height: fit-content; background: red; box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.08); position: absolute; inset: 0 0 0 0; margin: auto">
+
+
+    <div *ngIf="marking_appointment === 1">
+        <p>marcando agendamento</p>
+
+            <!-- <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; width: fit-content; margin: auto; gap: 8px;">
+        <div *ngFor="let day of weekdays; let i = index" >
+
+            <div style="font-size: .7em; display: flex; gap: 8px; align-items: center; flex-direction: column; width: fit-content;
+       ; width: 60px; height: fit-content; padding: 8px 0 8px 0;"
+        [style.background]="order?.time[weekdays[i]] === '00:00-00:00' ? 'whitesmoke' : 'var(--zw-red)'" 
+        [style.color]="order?.time[weekdays[i]] === '00:00-00:00' ? 'gray' : 'white'"
+        >
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="gray" class="bi bi-clock" viewBox="0 0 16 16"
+            [style.fill]="order?.time[weekdays[i]] === '00:00-00:00' ? 'gray' : 'white'"
+            >
+                <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+            </svg>
+            <p>{{weekdays[i]}}</p>
+            <p style="font-size: .8em;">{{order?.time[weekdays[i]] === '00:00-00:00' ? 'fechado' : order?.time[weekdays[i]]}}</p>
+        </div>
+
+        </div>
+    </div> -->
+
+     <div *ngFor="let item of order?.items; let i = index">
+        <div *ngIf="(item - order?.donated[i]) > 0">
+            {{possible_items[i]}}
+            <input type="number" placeholder="{{order.items[i] - order.donated[i]}}" [(ngModel)]="my_donation[i]" name="" id="">
+        </div>
+    </div>
+
+    <button (click)="makeAppointment()"  style="width: 100%; border: none; color: white; background: var(--zw-red); font-size: 1.3em; padding: 6px 46px 6px 46px; font-weight: 600; border-radius: 0px; box-shadow: none;">
+        Marcar Agendamento
+      </button>
+
+      <div class="box">
+        <a href="" class="voltar"><div class="voltar-btn"><img src="../../assets/Voltar.png" alt=""></div></a>
+        <h1>Faça seu agendamento!</h1>
+        <br>
+        <h2>NOME DA SOLICITAÇÃO</h2>
+        <div class="holder data">
+            <h3>Selecione o data da sua visita: </h3>
+            <div class="info">
+                <div class="dia">
+                    <select name="" id="" class="select">
+                        <option value="" >Domingo</option>
+                        <option value="" selected>Segunda-feira</option>
+                        <option value="" >Terça-feira</option>
+                        <option value="" >Quarta-feira</option>
+                        <option value="" >Quinta-feira</option>
+                        <option value="" >Sexta-feira</option>
+                        <option value="" >Sábado</option>
+                    </select>
+                </div>
+                <div class="hora">
+                    <input type="time" class="input" placeholder="12:00">
+                </div>
+            </div>
+        </div>
+        <div class="holder" id="produtos">
+            <div class="alimentoInfo" id="prod">
+                <div class="alimento">
+                    <h3>Selecione o que deseja doar:</h3>
+                    <select name="" id="" class="select">
+                        <option value="">Arroz</option>
+                    </select>
+                </div>
+                <div class="quantidade">
+                    <h3>Quantidade:</h3>
+                    <input type="text" class="input" placeholder="0 Kg">
+                </div>    
+            </div>
+        </div>      
+        <div class="btn-holder">
+            <button class="envia-btn" (click)="createComponent()">
+                <img src="../../assets/mais.png" alt="">Adicionar outro
+            </button>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="btn-holder">
+            <button class="confirma-btn" >Agenda</button>
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <div *ngIf="marking_appointment === 0" style="display: flex; flex-direction: column; gap: 16px;">
+
+    
+
+        <table>
+            <thead>
+              <tr>
+                  <th>Solicitado</th>
+                <th>Pendente</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of appointed_mentioned_to_this_order.items; let i = index">
+                <td class="truncate">{{ possible_items[i] }}</td>
+                <td>{{item?.items[i]}}</td>
+                <td>{{item?.donated[i]}}</td>
+            </tr>
+        </tbody>
+          </table>
+
+    </div>
+
+</div>
+
+</main>
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<main class="master" [@slideAnimation] *ngIf="is_open === 0">
+    <app-header [back]="'perfil'" ></app-header>
+    <main class="main" style="position: relative;">
+
+        
+
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+
+            <button *ngIf="is_owner === 1">Editar</button>
+            
+        <div>
+            <p style="font-size: 1.4em; font-weight: 900; color: rgb(45,45,45)">{{order?.name}}</p>
+            <p style="font-size: 1.2em; font-weight: 700; color: var(--zw-second); text-decoration: underline; " (click)="goToOngPage(ong_owner?._id)">{{ong_owner?.name}}</p>
+            <div>
+                <p style="color: rgb(45,45,45)">{{order?.description}}</p>
+              </div>
+        </div>
+
+        <div *ngIf="order?.over" style="border-radius: 15px; padding: 12px; border: 1px solid var(--zw-red); background-color: whitesmoke; color: var(--zw-red)">
+            <h2 style="font-size: 1.3em;">Agendamento Já concluído</h2>
+            <p style="font-size: 0.9em;">Caso voce já possua um agendamento para com esta solicitação, voce ainda poderá realiza-lo normalmente e receber seu comprovante. Caso desmarque ele, nãos será possivel agenda-lo novamente.</p>
+          </div>
+
+        <!-- <div>
+            <p style="color: rgb(45,45,45)"><span style="font-weight: 900;">Endereço: </span>{{ong_owner?.address_street}}</p>
+            <p style="color: rgb(45,45,45)"><span style="font-weight: 900;">Número: </span> {{ong_owner?.address_number}}</p>
+            <p style="color: rgb(45,45,45)"><span style="font-weight: 900;">Estado: </span> {{ong_owner?.address_state}}</p>
+            <p style="color: rgb(45,45,45)"><span style="font-weight: 900;">Contato: </span> 
+                ({{ong_owner?.phone.substring(0,2)}}) {{ong_owner?.phone.slice(2)}}
+            </p>
+      </div> -->
+
+      <div *ngIf="user.type === 'ong'">warning Apenas usuarios podem fazer agendamentos</div>
+
+        <table>
+            <thead>
+              <tr>
+                  <th>Items</th>
+                <th>Solicitado</th>
+                <th>Doado</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of possible_items; let i = index">
+                <td class="truncate" [style.background]="order?.items[i] === 0 ? 'rgb(220,220,220)': 'white'"
+                [style.color]="order?.items[i] === 0 ? 'gray': 'black'"
+                >{{ item }}</td>
+                <td [style.background]="order?.items[i] === 0 ? 'rgb(220,220,220)': 'white'"
+                [style.color]="order?.items[i] === 0 ? 'gray': 'black'"
+                >{{order?.items[i]}}</td>
+                <td [style.background]="order?.items[i] === 0 ? 'rgb(220,220,220)': 'white'"
+                [style.color]="order?.items[i] === 0 ? 'gray': 'black'">{{order?.donated[i]}}</td>
+            </tr>
+        </tbody>
+          </table>
+
+
+      
+
+      
+
+            <div *ngIf="user.type === 'user'">
+
+                <button *ngIf="is_appointed === 0 && !order?.over"  (click)="is_open = 1; marking_appointment = 1" style="width: 100%; border: none; color: white; background: var(--zw-red); font-size: 1.3em; padding: 12px 46px 12px 46px; font-weight: 600; border-radius: 0px; box-shadow: none;">
+                    Marcar Agendamento
+                </button>
+
+                <button  (click)="is_open = 1; marking_appointment = 0" *ngIf="is_appointed === 1"  style="width: 100%; border: none; color: white; background: var(--zw-red); font-size: 1.3em; padding: 12px 24px 12px 24px; font-weight: 600; border-radius: 0px; box-shadow: none;">
+                    Desmarcar Agendamento
+                </button>
+    
+                <!-- <button  (click)="is_open = 1" *ngIf="is_appointed === 1"  style="width: 100%; border: none; color: var(--zw-red); background: white; font-size: 1.3em; padding: 8px 24px 8px 24px; font-weight: 600; border-radius: 0px; box-shadow: none;">
+                    Desmarcar Agendamento
+                </button> -->
+            </div>
+
+           
+
+
+    
+            
+            
+          
+          
+
+        <!-- <button *ngIf="user?.type === 'user'">Marcar Agendamento</button> -->
+        <!-- <button >Marcar Agendamento</button> -->
+
+        
+        
+    </div>
+    </main>
+</main>
+
+
+
+
+
+
+
+

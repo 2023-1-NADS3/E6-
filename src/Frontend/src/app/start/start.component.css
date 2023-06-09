@@ -1,0 +1,41 @@
+.master{
+    /* background-color: var(--zw-red); */
+    background-color: whitesmoke;
+    position: relative;
+
+}
+
+.content{
+    gap: 52px;
+    position: absolute;
+    margin: auto;
+    inset: 0 0 100px 0;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    width: fit-content;
+    height: fit-content;
+}
+
+
+
+.start-button, .have-account-button{
+    width: fit-content;
+    font-size: 1.4em;
+    padding: 6px 32px 6px 32px;
+    color: white;
+    background-color: var(--zw-red);
+    box-shadow: 4px 4px 8px 2px rgba(0, 0, 0, 0.247);
+    background-color: #AE130F;
+    font-weight: 800;
+}
+
+.start-button{
+    color: #AE130F;
+    box-shadow: 4px 4px 8px 2px rgba(0, 0, 0, 0.247);
+    background-color: white;
+    font-weight: 800;
+}

@@ -1,0 +1,137 @@
+
+/* .categorias{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: fit-content;
+    flex-direction: column;
+}
+.categoria{
+    text-align: left;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #D99D2A;
+    border-radius: 10px;
+    padding: 10px 10px 0px 10px;
+    width: 150px;
+    height: 150px;
+    max-width: 400px;
+    color: white;
+    font-weight: bold;
+    border: none;
+    transition: 0.3s;
+}
+.categoria:hover{
+    opacity: 0.7;
+    transition: 0.3s;
+}
+.break{
+    display: none;
+} */
+
+.main{
+    background-color: whitesmoke;
+}
+
+
+
+.categories{
+    margin: auto;
+    justify-items: flex-start;
+    overflow-x: scroll;
+    align-items: flex-start;
+    /* justify-content: space-evenly */
+    /* background-color: blue; */
+    width: 100%;
+   
+    padding-bottom: 10px;
+}   
+
+.categories-inside{
+    padding-right: 80px;
+    display: flex;
+    gap: 8px;
+    height: 100%;
+    width: fit-content;
+}
+
+.category{
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    flex-direction: column;
+    align-items: center;
+
+    /* background-color: red; */
+    /* padding: 0 8px 0 8px; */
+    
+    color: var(--clear-text);
+    
+    color: black;
+    padding: 0 36px 0 36px;
+    color: rgb(160,160,160);
+    color: var(--white);
+    background-color: var(--zw-red);
+    border-radius: 8px;
+    padding-bottom: 8px;
+
+}
+
+::-webkit-scrollbar {
+    display: none;
+  }
+  
+.category-circle{
+    width: 70px;
+    border: 1px solid var(--zw-red);
+    border-radius: 50%;
+    color: white;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+/* companies */
+.companies{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+    min-height: 150px;
+}
+
+
+
+
+
+/* request */
+.requests{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+    min-height: 150px;
+}
+.request{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 8px 0 8px 0;
+    gap: 12px;
+    padding: 8px 8px 8px 8px;
+    align-items: center;
+}
+
+.request-info{
+    background-color: white;
+    /* padding: 16px; */
+    width: 100%;
+}
+
+.orders-container{
+    transition: 0.3s;
+}

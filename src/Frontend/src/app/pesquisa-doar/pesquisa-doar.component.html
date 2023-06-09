@@ -1,0 +1,207 @@
+<main class="master" [@slideToSide] *ngIf="is_on_ong_screen === 1">
+    <app-header></app-header>
+    <main class="main">
+        <button (click)="closeOng()">back</button>
+     
+            <!-- <div class="size1">
+                <a href="" class="voltar"><div class="voltar-btn"><img src="../../assets/Voltar.png" alt=""></div></a>
+                
+            <div class="filtragem">
+                <h2>Veja abaixo as solicitações 
+                    de doações</h2>
+                <div class="filtros">
+                    <select name="" id="">
+                        <option value="">selecionar</option>
+                    </select>
+                    <select name="" id="">
+                        <option value="">selecionar</option>
+                    </select>
+                    <select name="" id="">
+                        <option value="">selecionar</option>
+                    </select>
+                    <select name="" id="">
+                        <option value="">selecionar</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+            <div class="solicitacoes">
+                <div class="solicitacao">
+                    <h3>NOME DA ONG</h3>
+                    <p>solicitação feita em: <span>DATA DA SOLICITAÇÃO</span></p>
+                    <a href="/pagina-ong/0">clique aqui para ver a solicitação</a>
+                </div>
+                <div class="solicitacao">
+                    <h3>NOME DA ONG</h3>
+                    <p>solicitação feita em: <span>DATA DA SOLICITAÇÃO</span></p>
+                    <a href="/pagina-ong/1">clique aqui para ver a solicitação</a>
+                </div>
+                <div class="solicitacao">
+                    <h3>NOME DA ONG</h3>
+                    <p>solicitação feita em: <span>DATA DA SOLICITAÇÃO</span></p>
+                    <a href="/pagina-ong/2">clique aqui para ver a solicitação</a>
+                </div>
+            </div> -->
+
+          
+<main class="master" [@slideToSide]>
+    <app-header [back]="'perfil'"></app-header>
+    <main class="main">
+
+
+ 
+      
+        
+            <div class="local">
+                <p>Para doar basta verificar o endereço abaixo e enviar os alimentos necessários para a ONG.</p>
+                <div>
+                    <h3>Cidade: <span>{{ong?.address_street}}</span></h3>
+                </div>
+                <div>
+                    <h3>Estado: <span>{{ong?.address_state}}</span></h3>
+                </div>
+                <div>
+                    <h3>Número: <span>{{ong?.address_number}}</span></h3>
+                </div>
+                <div>
+                    <h3>Funcionamento:</h3>
+                      
+                        <div class="funcionamento" *ngFor="let day of weekdays">
+                            <span class="dia" *ngIf="ong?.working_time[day] === '00:00-00:00'">
+                                <p class="dia">{{day}}: Fechado</p>
+            
+                            </span>
+                            <span *ngIf="ong?.working_time[day] !== '00:00-00:00'">
+                                <p class="dia">{{day}}: {{ong?.working_time[day]}}</p>
+                            
+
+                            </span>
+                        </div>
+                       
+                    
+                </div>
+            </div>
+
+            <div class="alimentos">
+            <div *ngFor="let order of ong_active_orders">
+
+                <h2>Solicitações em Aberto:</h2>
+                <button class="alimento" (click)="goToOrderPage(order?._id)">
+                    <h1 class="nome-sol">{{order?.name}}</h1>
+                    <p>Alimento:</p>
+                    <div *ngFor="let item of order.items; let i = index;">
+                        <p *ngIf="order?.items[i] !== 0">{{possible_items[i]}}: {{order?.items[i]}}</p>
+                    </div>
+             
+                    <p class="data">Solicitação realizada em: {{order?.created_at}}</p>    
+                    <div style="display: flex; gap: 12px; align-items: center; width: 100%;">
+                        <p>{{((order?.sum_donated / order?.sum_items) * 100).toString().split('.')[0]}}%</p>
+                        <div class="progress-bar-outside">
+                            <div class="progress-bar-inside" [style.width.%]="((order?.sum_donated / order?.sum_items) * 100) + 2">
+                            </div>
+                            
+                        </div>
+                    </div>
+                </button>
+            </div>
+        </div>
+            <br>
+            <br>
+            <br>
+            <br>
+     
+
+
+
+
+
+
+
+</main>
+</main>
+        
+<!--         
+            <div class="bottom-company-info">
+                <span class="bottom-info-container">
+                    <p>likes</p>
+                    <p>7</p>
+                </span>
+                <span class="bottom-info-container">
+                    <p>Requests</p>
+                    <p>1</p>
+                </span>
+                <span class="bottom-info-container">
+                    <p>Completed</p>
+                    <p>0</p>
+                </span>
+            </div> -->
+        
+
+
+    
+    
+
+        
+    </main>
+</main>
+
+<main class="master" [@slideAnimation] *ngIf="is_on_ong_screen === 0">
+
+<app-header></app-header>
+
+<main #container class="main">
+
+
+
+    <div style="display: flex; flex-direction: column; gap: 8px;">
+
+        <div *ngFor="let ong of ongs; let i = index;">
+
+    
+
+
+
+
+
+
+
+  
+            <div style="width: 100%; height: fit-content; background: white; border-radius: 16px; padding: 8px 16px 8px 16px; gap: 8px; display: flex; flex-direction: column;">
+                <div>
+                    <p style="font-size: 1.2em; font-weight: 900;" class="elip sl">{{ong?.name}}</p>
+                    <p class="elip tl">{{ong?.description}}</p>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 6px; align-items: flex-start; width: 100%;">
+                    <p><span style="font-weight: 900;">Endereço: </span>{{ong?.address_street}}, {{ong?.address_number}}</p>
+                    <p><span style="font-weight: 900;">Estado: </span>{{ong?.address_state}}</p>
+                    <p><span style="font-weight: 900;">Juntou-se em: </span>{{ong?.created_at?.split('-')[0]}}</p>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <p (click)="openOng(i)" style="color: var(--zw-red);">ver detalhes</p>
+                    <div style="display: flex; align-items: center; justify-content: end;">
+                        <h2 style="font-weight: 500; font-size: 1.8em; margin: 0;margin-right: 6px;">{{ong?.likes}}</h2>
+                    <svg *ngIf="!ong.liked" (click)="likeOng(ong._id, i)" style="margin-top: 2px;" xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                        <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+                      </svg>
+                      <svg *ngIf="ong.liked" (click)="unlikeOng(ong._id, i)" xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="var(--zw-red)" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                      </svg>
+                    </div>
+                </div> 
+            </div>
+  
+
+
+
+               
+
+
+            
+   
+
+    </div>
+    </div>
+       
+</main>
+</main>
+
