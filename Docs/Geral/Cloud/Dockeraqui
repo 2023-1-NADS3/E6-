@@ -1,4 +1,3 @@
-colocar dockerfiles nessa pasta
 FROM node:16.13.1
 
 WORKDIR /app
