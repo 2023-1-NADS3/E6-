@@ -21,4 +21,3 @@
 O projeto "Zero Waste” é um aplicativo que visa simplificar e agilizar o processo de doação de alimentos para organizações não governamentais (ONGs). O objetivo principal é criar uma ponte eficiente entre pessoas dispostas a doar alimentos e as ONGs que estão em necessidade desses recursos, a fim de combater a fome e ajudar aqueles que mais precisam.
 <br><br>
 
-## http://54.165.249.27/
